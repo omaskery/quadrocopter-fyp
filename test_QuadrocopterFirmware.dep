@@ -1,0 +1,144 @@
+Dependencies for Project 'test', Target 'QuadrocopterFirmware': (DO NOT MODIFY !)
+F (.\includes.h)(0x50F86A49)()
+F (.\Startup.s)(0x50F85D03)(--cpu Cortex-M3 -g --apcs=interwork -I D:\Apps\Keil\ARM\RV31\INC -I D:\Apps\Keil\ARM\CMSIS\Include -I D:\Apps\Keil\ARM\Inc\Luminary --list "Startup.lst" --xref -o "Startup.o" --depend "Startup.d")
+F (.\main.c)(0x50FBFD9B)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -ID:\Apps\StellarisWare\boards\ek-lm3s1968 -ID:\Apps\StellarisWare -I D:\Apps\Keil\ARM\RV31\INC -I D:\Apps\Keil\ARM\CMSIS\Include -I D:\Apps\Keil\ARM\Inc\Luminary -o "main.o" --omf_browse "main.crf" --depend "main.d")
+I (includes.h)(0x50F86A49)
+I (D:\Apps\Keil\ARM\ARMCC\bin\..\include\stdio.h)(0x4EB14306)
+I (D:\Apps\Keil\ARM\ARMCC\bin\..\include\stdarg.h)(0x4EB142FC)
+I (D:\Apps\StellarisWare\inc/hw_ints.h)(0x50F6D13D)
+I (D:\Apps\StellarisWare\inc/hw_memmap.h)(0x50F6D13D)
+I (D:\Apps\StellarisWare\inc/hw_types.h)(0x50F6D13D)
+I (D:\Apps\StellarisWare\driverlib/debug.h)(0x50F6D13D)
+I (D:\Apps\StellarisWare\driverlib/gpio.h)(0x50F6D13D)
+I (D:\Apps\StellarisWare\driverlib/pin_map.h)(0x50F6D13D)
+I (D:\Apps\StellarisWare\driverlib/interrupt.h)(0x50F6D13D)
+I (D:\Apps\StellarisWare\driverlib/sysctl.h)(0x50F6D13D)
+I (D:\Apps\StellarisWare\driverlib/uart.h)(0x50F6D13D)
+I (D:\Apps\StellarisWare\boards\ek-lm3s1968\drivers/rit128x96x4.h)(0x50F6D13C)
+I (D:\Apps\StellarisWare\driverlib/pwm.h)(0x50F6D13D)
+I (usart.h)(0x50F9F605)
+I (queue.h)(0x50F9C535)
+I (motor.h)(0x50F9D04E)
+I (mypwm.h)(0x50F9CB05)
+I (globals.h)(0x50F9FAC1)
+I (init.h)(0x50F9C55F)
+F (.\globals.h)(0x50F9FAC1)()
+F (D:\Apps\StellarisWare\driverlib\rvmdk\driverlib.lib)(0x50F6CEE2)()
+F (D:\Apps\StellarisWare\driverlib\ssi.c)(0x50F6D13D)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -ID:\Apps\StellarisWare\boards\ek-lm3s1968 -ID:\Apps\StellarisWare -I D:\Apps\Keil\ARM\RV31\INC -I D:\Apps\Keil\ARM\CMSIS\Include -I D:\Apps\Keil\ARM\Inc\Luminary -o "ssi.o" --omf_browse "ssi.crf" --depend "ssi.d")
+I (D:\Apps\StellarisWare\inc/hw_ints.h)(0x50F6D13D)
+I (D:\Apps\StellarisWare\inc/hw_memmap.h)(0x50F6D13D)
+I (D:\Apps\StellarisWare\inc/hw_ssi.h)(0x50F6D13D)
+I (D:\Apps\StellarisWare\inc/hw_types.h)(0x50F6D13D)
+I (D:\Apps\StellarisWare\driverlib/debug.h)(0x50F6D13D)
+I (D:\Apps\StellarisWare\driverlib/interrupt.h)(0x50F6D13D)
+I (D:\Apps\StellarisWare\driverlib/ssi.h)(0x50F6D13D)
+I (D:\Apps\StellarisWare\driverlib/sysctl.h)(0x50F6D13D)
+F (D:\Apps\StellarisWare\boards\ek-lm3s1968\drivers\rit128x96x4.c)(0x50F6D13C)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -ID:\Apps\StellarisWare\boards\ek-lm3s1968 -ID:\Apps\StellarisWare -I D:\Apps\Keil\ARM\RV31\INC -I D:\Apps\Keil\ARM\CMSIS\Include -I D:\Apps\Keil\ARM\Inc\Luminary -o "rit128x96x4.o" --omf_browse "rit128x96x4.crf" --depend "rit128x96x4.d")
+I (D:\Apps\StellarisWare\inc/hw_ssi.h)(0x50F6D13D)
+I (D:\Apps\StellarisWare\inc/hw_memmap.h)(0x50F6D13D)
+I (D:\Apps\StellarisWare\inc/hw_sysctl.h)(0x50F6D13D)
+I (D:\Apps\StellarisWare\inc/hw_types.h)(0x50F6D13D)
+I (D:\Apps\StellarisWare\driverlib/debug.h)(0x50F6D13D)
+I (D:\Apps\StellarisWare\driverlib/gpio.h)(0x50F6D13D)
+I (D:\Apps\StellarisWare\driverlib/pin_map.h)(0x50F6D13D)
+I (D:\Apps\StellarisWare\driverlib/ssi.h)(0x50F6D13D)
+I (D:\Apps\StellarisWare\driverlib/sysctl.h)(0x50F6D13D)
+I (D:\Apps\StellarisWare\boards\ek-lm3s1968\drivers/rit128x96x4.h)(0x50F6D13C)
+F (D:\Apps\StellarisWare\driverlib\pwm.c)(0x50F6D13D)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -ID:\Apps\StellarisWare\boards\ek-lm3s1968 -ID:\Apps\StellarisWare -I D:\Apps\Keil\ARM\RV31\INC -I D:\Apps\Keil\ARM\CMSIS\Include -I D:\Apps\Keil\ARM\Inc\Luminary -o "pwm.o" --omf_browse "pwm.crf" --depend "pwm.d")
+I (D:\Apps\StellarisWare\inc/hw_ints.h)(0x50F6D13D)
+I (D:\Apps\StellarisWare\inc/hw_memmap.h)(0x50F6D13D)
+I (D:\Apps\StellarisWare\inc/hw_pwm.h)(0x50F6D13D)
+I (D:\Apps\StellarisWare\inc/hw_sysctl.h)(0x50F6D13D)
+I (D:\Apps\StellarisWare\inc/hw_types.h)(0x50F6D13D)
+I (D:\Apps\StellarisWare\driverlib/debug.h)(0x50F6D13D)
+I (D:\Apps\StellarisWare\driverlib/interrupt.h)(0x50F6D13D)
+I (D:\Apps\StellarisWare\driverlib/pwm.h)(0x50F6D13D)
+F (.\usart.h)(0x50F9F605)()
+F (.\usart.c)(0x50F9FB09)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -ID:\Apps\StellarisWare\boards\ek-lm3s1968 -ID:\Apps\StellarisWare -I D:\Apps\Keil\ARM\RV31\INC -I D:\Apps\Keil\ARM\CMSIS\Include -I D:\Apps\Keil\ARM\Inc\Luminary -o "usart.o" --omf_browse "usart.crf" --depend "usart.d")
+I (usart.h)(0x50F9F605)
+I (includes.h)(0x50F86A49)
+I (D:\Apps\Keil\ARM\ARMCC\bin\..\include\stdio.h)(0x4EB14306)
+I (D:\Apps\Keil\ARM\ARMCC\bin\..\include\stdarg.h)(0x4EB142FC)
+I (D:\Apps\StellarisWare\inc/hw_ints.h)(0x50F6D13D)
+I (D:\Apps\StellarisWare\inc/hw_memmap.h)(0x50F6D13D)
+I (D:\Apps\StellarisWare\inc/hw_types.h)(0x50F6D13D)
+I (D:\Apps\StellarisWare\driverlib/debug.h)(0x50F6D13D)
+I (D:\Apps\StellarisWare\driverlib/gpio.h)(0x50F6D13D)
+I (D:\Apps\StellarisWare\driverlib/pin_map.h)(0x50F6D13D)
+I (D:\Apps\StellarisWare\driverlib/interrupt.h)(0x50F6D13D)
+I (D:\Apps\StellarisWare\driverlib/sysctl.h)(0x50F6D13D)
+I (D:\Apps\StellarisWare\driverlib/uart.h)(0x50F6D13D)
+I (D:\Apps\StellarisWare\boards\ek-lm3s1968\drivers/rit128x96x4.h)(0x50F6D13C)
+I (D:\Apps\StellarisWare\driverlib/pwm.h)(0x50F6D13D)
+I (queue.h)(0x50F9C535)
+I (globals.h)(0x50F9FAC1)
+F (.\mypwm.c)(0x50F9CB10)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -ID:\Apps\StellarisWare\boards\ek-lm3s1968 -ID:\Apps\StellarisWare -I D:\Apps\Keil\ARM\RV31\INC -I D:\Apps\Keil\ARM\CMSIS\Include -I D:\Apps\Keil\ARM\Inc\Luminary -o "mypwm.o" --omf_browse "mypwm.crf" --depend "mypwm.d")
+I (mypwm.h)(0x50F9CB05)
+I (includes.h)(0x50F86A49)
+I (D:\Apps\Keil\ARM\ARMCC\bin\..\include\stdio.h)(0x4EB14306)
+I (D:\Apps\Keil\ARM\ARMCC\bin\..\include\stdarg.h)(0x4EB142FC)
+I (D:\Apps\StellarisWare\inc/hw_ints.h)(0x50F6D13D)
+I (D:\Apps\StellarisWare\inc/hw_memmap.h)(0x50F6D13D)
+I (D:\Apps\StellarisWare\inc/hw_types.h)(0x50F6D13D)
+I (D:\Apps\StellarisWare\driverlib/debug.h)(0x50F6D13D)
+I (D:\Apps\StellarisWare\driverlib/gpio.h)(0x50F6D13D)
+I (D:\Apps\StellarisWare\driverlib/pin_map.h)(0x50F6D13D)
+I (D:\Apps\StellarisWare\driverlib/interrupt.h)(0x50F6D13D)
+I (D:\Apps\StellarisWare\driverlib/sysctl.h)(0x50F6D13D)
+I (D:\Apps\StellarisWare\driverlib/uart.h)(0x50F6D13D)
+I (D:\Apps\StellarisWare\boards\ek-lm3s1968\drivers/rit128x96x4.h)(0x50F6D13C)
+I (D:\Apps\StellarisWare\driverlib/pwm.h)(0x50F6D13D)
+I (usart.h)(0x50F9F605)
+I (queue.h)(0x50F9C535)
+F (.\mypwm.h)(0x50F9CB05)()
+F (.\queue.h)(0x50F9C535)()
+F (.\queue.c)(0x50F83B6B)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -ID:\Apps\StellarisWare\boards\ek-lm3s1968 -ID:\Apps\StellarisWare -I D:\Apps\Keil\ARM\RV31\INC -I D:\Apps\Keil\ARM\CMSIS\Include -I D:\Apps\Keil\ARM\Inc\Luminary -o "queue.o" --omf_browse "queue.crf" --depend "queue.d")
+I (queue.h)(0x50F9C535)
+F (.\init.h)(0x50F9C55F)()
+F (.\init.c)(0x50F9FBFE)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -ID:\Apps\StellarisWare\boards\ek-lm3s1968 -ID:\Apps\StellarisWare -I D:\Apps\Keil\ARM\RV31\INC -I D:\Apps\Keil\ARM\CMSIS\Include -I D:\Apps\Keil\ARM\Inc\Luminary -o "init.o" --omf_browse "init.crf" --depend "init.d")
+I (init.h)(0x50F9C55F)
+I (includes.h)(0x50F86A49)
+I (D:\Apps\Keil\ARM\ARMCC\bin\..\include\stdio.h)(0x4EB14306)
+I (D:\Apps\Keil\ARM\ARMCC\bin\..\include\stdarg.h)(0x4EB142FC)
+I (D:\Apps\StellarisWare\inc/hw_ints.h)(0x50F6D13D)
+I (D:\Apps\StellarisWare\inc/hw_memmap.h)(0x50F6D13D)
+I (D:\Apps\StellarisWare\inc/hw_types.h)(0x50F6D13D)
+I (D:\Apps\StellarisWare\driverlib/debug.h)(0x50F6D13D)
+I (D:\Apps\StellarisWare\driverlib/gpio.h)(0x50F6D13D)
+I (D:\Apps\StellarisWare\driverlib/pin_map.h)(0x50F6D13D)
+I (D:\Apps\StellarisWare\driverlib/interrupt.h)(0x50F6D13D)
+I (D:\Apps\StellarisWare\driverlib/sysctl.h)(0x50F6D13D)
+I (D:\Apps\StellarisWare\driverlib/uart.h)(0x50F6D13D)
+I (D:\Apps\StellarisWare\boards\ek-lm3s1968\drivers/rit128x96x4.h)(0x50F6D13C)
+I (D:\Apps\StellarisWare\driverlib/pwm.h)(0x50F6D13D)
+I (globals.h)(0x50F9FAC1)
+I (usart.h)(0x50F9F605)
+I (queue.h)(0x50F9C535)
+I (mypwm.h)(0x50F9CB05)
+I (motor.h)(0x50F9D04E)
+F (.\motor.c)(0x50F9FB80)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -ID:\Apps\StellarisWare\boards\ek-lm3s1968 -ID:\Apps\StellarisWare -I D:\Apps\Keil\ARM\RV31\INC -I D:\Apps\Keil\ARM\CMSIS\Include -I D:\Apps\Keil\ARM\Inc\Luminary -o "motor.o" --omf_browse "motor.crf" --depend "motor.d")
+I (motor.h)(0x50F9D04E)
+I (mypwm.h)(0x50F9CB05)
+I (includes.h)(0x50F86A49)
+I (D:\Apps\Keil\ARM\ARMCC\bin\..\include\stdio.h)(0x4EB14306)
+I (D:\Apps\Keil\ARM\ARMCC\bin\..\include\stdarg.h)(0x4EB142FC)
+I (D:\Apps\StellarisWare\inc/hw_ints.h)(0x50F6D13D)
+I (D:\Apps\StellarisWare\inc/hw_memmap.h)(0x50F6D13D)
+I (D:\Apps\StellarisWare\inc/hw_types.h)(0x50F6D13D)
+I (D:\Apps\StellarisWare\driverlib/debug.h)(0x50F6D13D)
+I (D:\Apps\StellarisWare\driverlib/gpio.h)(0x50F6D13D)
+I (D:\Apps\StellarisWare\driverlib/pin_map.h)(0x50F6D13D)
+I (D:\Apps\StellarisWare\driverlib/interrupt.h)(0x50F6D13D)
+I (D:\Apps\StellarisWare\driverlib/sysctl.h)(0x50F6D13D)
+I (D:\Apps\StellarisWare\driverlib/uart.h)(0x50F6D13D)
+I (D:\Apps\StellarisWare\boards\ek-lm3s1968\drivers/rit128x96x4.h)(0x50F6D13C)
+I (D:\Apps\StellarisWare\driverlib/pwm.h)(0x50F6D13D)
+I (usart.h)(0x50F9F605)
+I (queue.h)(0x50F9C535)
+F (.\motor.h)(0x50F9D04E)()
+F (.\sensor.c)(0x50FBFF53)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -ID:\Apps\StellarisWare\boards\ek-lm3s1968 -ID:\Apps\StellarisWare -I D:\Apps\Keil\ARM\RV31\INC -I D:\Apps\Keil\ARM\CMSIS\Include -I D:\Apps\Keil\ARM\Inc\Luminary -o "sensor.o" --omf_browse "sensor.crf" --depend "sensor.d")
+I (sensor.h)(0x50FBFF4A)
+F (.\sensor.h)(0x50FBFF4A)()
+F (.\pid.c)(0x50FD51AA)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -ID:\Apps\StellarisWare\boards\ek-lm3s1968 -ID:\Apps\StellarisWare -I D:\Apps\Keil\ARM\RV31\INC -I D:\Apps\Keil\ARM\CMSIS\Include -I D:\Apps\Keil\ARM\Inc\Luminary -o "pid.o" --omf_browse "pid.crf" --depend "pid.d")
+I (pid.h)(0x50FD51A3)
+F (.\pid.h)(0x50FD51A3)()

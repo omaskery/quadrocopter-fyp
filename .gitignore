@@ -1,0 +1,12 @@
+*~
+*.o
+*.d
+*.lst
+*.crf
+*.__i
+*.axf
+*.htm
+*.lnp
+*.map
+*.swp
+

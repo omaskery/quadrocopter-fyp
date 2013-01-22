@@ -9,7 +9,7 @@ Project File Date:  01/21/2013
 <h2>Output:</h2>
 Clean started: Project: 'test'
    deleting intermediate output files for target 'QuadrocopterFirmware'
-Rebuild target 'QuadrocopterFirmware'
+Build target 'QuadrocopterFirmware'
 assembling Startup.s...
 compiling main.c...
 compiling ssi.c...
@@ -22,31 +22,8 @@ compiling init.c...
 compiling motor.c...
 compiling sensor.c...
 compiling pid.c...
-pid.h(17): error:  #20: identifier "gain_t" is undefined
-pid.h(17): error:  #20: identifier "gain_t" is undefined
-pid.h(17): error:  #20: identifier "gain_t" is undefined
-pid.h(18): error:  #20: identifier "position_t" is undefined
-pid.h(19): error:  #20: identifier "position_t" is undefined
-pid.c(3): error:  #20: identifier "gain_t" is undefined
-pid.c(3): error:  #20: identifier "gain_t" is undefined
-pid.c(3): error:  #20: identifier "gain_t" is undefined
-pid.c(18): error:  #20: identifier "position_t" is undefined
-pid.c(23): error:  #20: identifier "position_t" is undefined
-Target not created
-Build target 'QuadrocopterFirmware'
-compiling pid.c...
-pid.c(3): error:  #20: identifier "gain_t" is undefined
-pid.c(3): error:  #20: identifier "gain_t" is undefined
-pid.c(3): error:  #20: identifier "gain_t" is undefined
-pid.c(18): error:  #20: identifier "position_t" is undefined
-pid.c(23): error:  #20: identifier "position_t" is undefined
-Target not created
-Build target 'QuadrocopterFirmware'
-compiling pid.c...
 linking...
 Program Size: Code=13596 RO-data=1324 RW-data=332 ZI-data=1516  
 User command #1: D:\Dropbox\University\FYP\work\ARM\test\makebin.bat
 D:\Dropbox\University\FYP\work\ARM\test>D:\Apps\Keil\ARM\ARMCC\bin\fromelf.exe test.axf --bin --output out.bin 
 "test.axf" - 0 Error(s), 0 Warning(s).
-Clean started: Project: 'test'
-   deleting intermediate output files for target 'QuadrocopterFirmware'

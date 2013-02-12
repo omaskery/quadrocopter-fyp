@@ -6,9 +6,9 @@ flight flight_module;
 void FlightInitialise(flight *this)
 {
 	this->thrust = 0.0f;
-	PidInitialise(&this->roll,  0.0f,0.0f,0.0f);
-	PidInitialise(&this->pitch, 0.0f,0.0f,0.0f);
-  PidInitialise(&this->yaw,   0.0f,0.0f,0.0f);
+	PidInitialise(&this->roll,  0.01f,0.00f,0.00f);
+	PidInitialise(&this->pitch, 0.01f,0.00f,0.00f);
+  PidInitialise(&this->yaw,   0.01f,0.00f,0.00f);
 }
 
 void FlightUpdate(flight *this, rotation *_rot)
@@ -21,10 +21,10 @@ void FlightUpdate(flight *this, rotation *_rot)
 	PidUpdate(&this->pitch);
 	PidUpdate(&this->yaw);
 	
-	MotorSetPower(&motorA, this->thrust + this->pitch.output + this->yaw.output);
-	MotorSetPower(&motorB, this->thrust + this->roll.output  - this->yaw.output);
-	MotorSetPower(&motorC, this->thrust - this->pitch.output + this->yaw.output);
-	MotorSetPower(&motorD, this->thrust - this->roll.output  - this->yaw.output);
+	MotorSetPower(&motorA, this->thrust + this->pitch.output - this->yaw.output);
+	MotorSetPower(&motorB, this->thrust - this->roll.output  + this->yaw.output);
+	MotorSetPower(&motorC, this->thrust - this->pitch.output - this->yaw.output);
+	MotorSetPower(&motorD, this->thrust + this->roll.output  + this->yaw.output);
 }
 
 void FlightSetDesiredRotation(flight *this, float _roll, float _pitch, float _yaw)

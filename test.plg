@@ -170,3 +170,44 @@ User command #1: makebin.bat
 C:\Users\Student\Documents\maskeryo\ARM code\test>"C:\Keil\ARM\ARMCC\bin\fromelf.exe" test.axf --bin --output out.bin 
 "test.axf" - 0 Error(s), 0 Warning(s).
 "C:\Program Files\Luminary Micro\LM Flash Programmer\LMFlash.exe" 
+Build target 'QuadrocopterFirmware'
+compiling flight.c...
+linking...
+Program Size: Code=14264 RO-data=1444 RW-data=1644 ZI-data=2124  
+User command #1: makebin.bat
+C:\Users\Student\Documents\maskeryo\ARM code\test>"C:\Keil\ARM\ARMCC\bin\fromelf.exe" test.axf --bin --output out.bin 
+"test.axf" - 0 Error(s), 0 Warning(s).
+"C:\Program Files\Luminary Micro\LM Flash Programmer\LMFlash.exe" 
+Build target 'QuadrocopterFirmware'
+compiling flight.c...
+linking...
+Program Size: Code=14264 RO-data=1444 RW-data=1644 ZI-data=2124  
+User command #1: makebin.bat
+C:\Users\Student\Documents\maskeryo\ARM code\test>"C:\Keil\ARM\ARMCC\bin\fromelf.exe" test.axf --bin --output out.bin 
+"test.axf" - 0 Error(s), 0 Warning(s).
+"C:\Program Files\Luminary Micro\LM Flash Programmer\LMFlash.exe" 
+Build target 'QuadrocopterFirmware'
+compiling flight.c...
+linking...
+Program Size: Code=14264 RO-data=1444 RW-data=1644 ZI-data=2124  
+User command #1: makebin.bat
+C:\Users\Student\Documents\maskeryo\ARM code\test>"C:\Keil\ARM\ARMCC\bin\fromelf.exe" test.axf --bin --output out.bin 
+"test.axf" - 0 Error(s), 0 Warning(s).
+"C:\Program Files\Luminary Micro\LM Flash Programmer\LMFlash.exe" 
+Build target 'QuadrocopterFirmware'
+compiling flight.c...
+linking...
+Program Size: Code=14264 RO-data=1444 RW-data=1644 ZI-data=2124  
+User command #1: makebin.bat
+C:\Users\Student\Documents\maskeryo\ARM code\test>"C:\Keil\ARM\ARMCC\bin\fromelf.exe" test.axf --bin --output out.bin 
+"test.axf" - 0 Error(s), 0 Warning(s).
+"C:\Program Files\Luminary Micro\LM Flash Programmer\LMFlash.exe" 
+Build target 'QuadrocopterFirmware'
+compiling flight.c...
+linking...
+Program Size: Code=14264 RO-data=1444 RW-data=1644 ZI-data=2124  
+User command #1: makebin.bat
+C:\Users\Student\Documents\maskeryo\ARM code\test>"C:\Keil\ARM\ARMCC\bin\fromelf.exe" test.axf --bin --output out.bin 
+"test.axf" - 0 Error(s), 0 Warning(s).
+"C:\Program Files\Luminary Micro\LM Flash Programmer\LMFlash.exe" 
+"C:\Program Files\Luminary Micro\LM Flash Programmer\LMFlash.exe" 

@@ -14,9 +14,13 @@ typedef struct pid_t
 	float output;						// the last calculated output from the PID algorithm
 } pid;
 
+// initialise a PID control loop
 void PidInitialise(pid*, float, float, float);
+// set the current target for a PID control loop
 void PidSetTarget(pid*, float);
+// set the current value for a PID control loop
 void PidSetCurrent(pid*, float);
+// cause a PID object to calculate a new output
 void PidUpdate(pid*);
 
 #endif

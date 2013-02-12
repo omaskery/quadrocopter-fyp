@@ -21,8 +21,9 @@
 ### List of Objects: adding '"system.o"'
 ### List of Objects: adding '"behaviour.o"'
 ### List of Objects: adding '"motion.o"'
+### List of Objects: adding '"flight.o"'
 ### ADS-LD Command completed:
---cpu Cortex-M3 "startup.o" "main.o" C:\StellarisWare\driverlib\rvmdk-cm3\driverlib-cm3.lib "ssi.o" "rit128x96x4.o" "pwm.o" "fpu.o" "i2c.o" "usart.o" "mypwm.o" "iic.o" "timer.o" "queue.o" "init.o" "motor.o" "sensor.o" "pid.o" "system.o" "behaviour.o" "motion.o" 
+--cpu Cortex-M3 "startup.o" "main.o" C:\StellarisWare\driverlib\rvmdk-cm3\driverlib-cm3.lib "ssi.o" "rit128x96x4.o" "pwm.o" "fpu.o" "i2c.o" "usart.o" "mypwm.o" "iic.o" "timer.o" "queue.o" "init.o" "motor.o" "sensor.o" "pid.o" "system.o" "behaviour.o" "motion.o" "flight.o" 
 --strict --scatter "test.sct" 
 --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
 --info sizes --info totals --info unused --info veneers 
@@ -30,7 +31,7 @@
 ### ADS-LD Output File: 'test.axf'
 ### ADS-LD Command File: 'test.lnp'
 ### Checking for dirty Components...
-### Creating CmdFile 'test.lnp', Handle=0x00000608
+### Creating CmdFile 'test.lnp', Handle=0x0000052C
 ### Writing '.lnp' file
 ### ADS-LD Command file 'test.lnp' is ready.
 ### ADS-LD: About to start ADS-LD Thread.

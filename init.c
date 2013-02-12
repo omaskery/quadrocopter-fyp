@@ -8,6 +8,7 @@
 #include "iic.h"
 #include "sensor.h"
 #include "motion.h"
+#include "flight.h"
 #include "system.h"
 
 char rxUsartBuffer[RX_BUFFER_SIZE];
@@ -126,6 +127,11 @@ void _MotionInitialise(void)
 	MotionInitialise(&orientation, &mpu6050);
 }
 
+void _FlightInitialise(void)
+{
+	FlightInitialise(&flight_module);
+}
+
 void _TimerInitialise(void)
 {
 	SysCtlPeripheralEnable(SYSCTL_PERIPH_TIMER0);
@@ -155,6 +161,8 @@ void InitialiseSystem(void)
 	UsartWriteLine(&usart0, "System State Initialised");
 	_MotionInitialise();
 	UsartWriteLine(&usart0, "Motion Module Initialised");
+	_FlightInitialise();
+	UsartWriteLine(&usart0, "Flight Module Initialised");
 	_TimerInitialise();
 	UsartWriteLine(&usart0, "Timers initialised");
 	

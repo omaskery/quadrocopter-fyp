@@ -4,6 +4,7 @@
 #include "iic.h"
 #include "sensor.h"
 #include "motion.h"
+#include "flight.h"
 
 // cough, need to write an abstraction for this...
 #include "drivers/rit128x96x4.h"
@@ -27,6 +28,10 @@ void _Mode_Warmup(system_status *this)
 		delay = 0;
 		testPassed = 0;
 		SensorOpTestID(&mpu6050);
+		MotorSetPower(&motorA, 0.0f);
+		MotorSetPower(&motorB, 0.0f);
+		MotorSetPower(&motorC, 0.0f);
+		MotorSetPower(&motorD, 0.0f);
 	}
 	
 	if(mpu6050.validity == SENSOR_INVALID)
@@ -98,7 +103,7 @@ void _Mode_MotorStart(system_status *this)
 		UsartWriteInt32(&usart0, motorIndex);
 		UsartPutNewLine(&usart0);
 		
-		MotorSetPower(all_motors[motorIndex++], 0.17f);
+		MotorSetPower(all_motors[motorIndex++], 0.05f);
 		switch(motorIndex)
 		{
 		case 0: RIT128x96x4StringDraw("Starting motor: front", 5, 25, 15); break;
@@ -134,6 +139,7 @@ void _Mode_Running(system_status *this)
 	if(this->modeChanged)
 	{
 		UsartWriteLine(&usart0, "Running!");
+		FlightSetThrust(&flight_module, 0.15);
 	}
 	
 	if(toggle ++ >= everyOther)
@@ -141,6 +147,8 @@ void _Mode_Running(system_status *this)
 		toggle = 0;
 		SensorOpGetMotion6(&mpu6050);
 	}
+	
+	FlightUpdate(&flight_module, &orientation);
 }
 
 void _Mode_Dead(system_status *this)

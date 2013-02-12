@@ -1,7 +1,7 @@
 Dependencies for Project 'test', Target 'QuadrocopterFirmware': (DO NOT MODIFY !)
 F (.\includes.h)(0x510A4D5B)()
 F (.\Startup.s)(0x510FC276)(--cpu Cortex-M3 -g --apcs=interwork -I C:\Keil\ARM\RV31\INC -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\Luminary --list "Startup.lst" --xref -o "Startup.o" --depend "Startup.d")
-F (.\main.c)(0x5110FCBB)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -IC:\StellarisWare\boards\ek-lm3s1968 -IC:\StellarisWare -I C:\Keil\ARM\RV31\INC -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\Luminary -o "main.o" --omf_browse "main.crf" --depend "main.d")
+F (.\main.c)(0x511A374A)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -IC:\StellarisWare\boards\ek-lm3s1968 -IC:\StellarisWare -I C:\Keil\ARM\RV31\INC -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\Luminary -o "main.o" --omf_browse "main.crf" --depend "main.d")
 I (includes.h)(0x510A4D5B)
 I (C:\Keil\ARM\ARMCC\bin\..\include\stdlib.h)(0x4EB14304)
 I (C:\Keil\ARM\ARMCC\bin\..\include\stdint.h)(0x4EB14304)
@@ -28,8 +28,12 @@ I (mypwm.h)(0x50F9CB06)
 I (globals.h)(0x5110EB21)
 I (system.h)(0x51065A69)
 I (timer.h)(0x51069F07)
-I (iic.h)(0x51027D21)
 I (init.h)(0x50F9C560)
+I (flight.h)(0x511A2AE3)
+I (pid.h)(0x511A2731)
+I (motion.h)(0x5110FF51)
+I (sensor.h)(0x5106A006)
+I (iic.h)(0x51027D21)
 F (.\globals.h)(0x5110EB21)()
 F (C:\StellarisWare\driverlib\rvmdk-cm3\driverlib-cm3.lib)(0x50FD5A46)()
 F (C:\StellarisWare\driverlib\ssi.c)(0x50FD5A46)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -IC:\StellarisWare\boards\ek-lm3s1968 -IC:\StellarisWare -I C:\Keil\ARM\RV31\INC -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\Luminary -o "ssi.o" --omf_browse "ssi.crf" --depend "ssi.d")
@@ -174,7 +178,7 @@ F (.\queue.h)(0x5110D911)()
 F (.\queue.c)(0x5110D91C)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -IC:\StellarisWare\boards\ek-lm3s1968 -IC:\StellarisWare -I C:\Keil\ARM\RV31\INC -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\Luminary -o "queue.o" --omf_browse "queue.crf" --depend "queue.d")
 I (queue.h)(0x5110D911)
 F (.\init.h)(0x50F9C560)()
-F (.\init.c)(0x5109379C)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -IC:\StellarisWare\boards\ek-lm3s1968 -IC:\StellarisWare -I C:\Keil\ARM\RV31\INC -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\Luminary -o "init.o" --omf_browse "init.crf" --depend "init.d")
+F (.\init.c)(0x511A2B16)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -IC:\StellarisWare\boards\ek-lm3s1968 -IC:\StellarisWare -I C:\Keil\ARM\RV31\INC -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\Luminary -o "init.o" --omf_browse "init.crf" --depend "init.d")
 I (init.h)(0x50F9C560)
 I (includes.h)(0x510A4D5B)
 I (C:\Keil\ARM\ARMCC\bin\..\include\stdlib.h)(0x4EB14304)
@@ -203,6 +207,8 @@ I (motor.h)(0x50FE931E)
 I (iic.h)(0x51027D21)
 I (sensor.h)(0x5106A006)
 I (motion.h)(0x5110FF51)
+I (flight.h)(0x511A2AE3)
+I (pid.h)(0x511A2731)
 I (system.h)(0x51065A69)
 I (timer.h)(0x51069F07)
 F (.\motor.c)(0x510A5945)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -IC:\StellarisWare\boards\ek-lm3s1968 -IC:\StellarisWare -I C:\Keil\ARM\RV31\INC -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\Luminary -o "motor.o" --omf_browse "motor.crf" --depend "motor.d")
@@ -256,9 +262,9 @@ I (globals.h)(0x5110EB21)
 I (queue.h)(0x5110D911)
 I (usart.h)(0x5110D89C)
 F (.\sensor.h)(0x5106A006)()
-F (.\pid.c)(0x50FD51AC)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -IC:\StellarisWare\boards\ek-lm3s1968 -IC:\StellarisWare -I C:\Keil\ARM\RV31\INC -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\Luminary -o "pid.o" --omf_browse "pid.crf" --depend "pid.d")
-I (pid.h)(0x50FD51A4)
-F (.\pid.h)(0x50FD51A4)()
+F (.\pid.c)(0x511A2A20)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -IC:\StellarisWare\boards\ek-lm3s1968 -IC:\StellarisWare -I C:\Keil\ARM\RV31\INC -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\Luminary -o "pid.o" --omf_browse "pid.crf" --depend "pid.d")
+I (pid.h)(0x511A2731)
+F (.\pid.h)(0x511A2731)()
 F (.\system.h)(0x51065A69)()
 F (.\system.c)(0x5110D761)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -IC:\StellarisWare\boards\ek-lm3s1968 -IC:\StellarisWare -I C:\Keil\ARM\RV31\INC -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\Luminary -o "system.o" --omf_browse "system.crf" --depend "system.d")
 I (system.h)(0x51065A69)
@@ -289,7 +295,7 @@ I (globals.h)(0x5110EB21)
 I (usart.h)(0x5110D89C)
 I (queue.h)(0x5110D911)
 F (.\behaviour.h)(0x50FFC163)()
-F (.\behaviour.c)(0x5110FCB3)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -IC:\StellarisWare\boards\ek-lm3s1968 -IC:\StellarisWare -I C:\Keil\ARM\RV31\INC -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\Luminary -o "behaviour.o" --omf_browse "behaviour.crf" --depend "behaviour.d")
+F (.\behaviour.c)(0x511A3526)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -IC:\StellarisWare\boards\ek-lm3s1968 -IC:\StellarisWare -I C:\Keil\ARM\RV31\INC -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\Luminary -o "behaviour.o" --omf_browse "behaviour.crf" --depend "behaviour.d")
 I (behaviour.h)(0x50FFC163)
 I (system.h)(0x51065A69)
 I (timer.h)(0x51069F07)
@@ -320,6 +326,8 @@ I (iic.h)(0x51027D21)
 I (globals.h)(0x5110EB21)
 I (sensor.h)(0x5106A006)
 I (motion.h)(0x5110FF51)
+I (flight.h)(0x511A2AE3)
+I (pid.h)(0x511A2731)
 F (.\motion.c)(0x511100F1)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -IC:\StellarisWare\boards\ek-lm3s1968 -IC:\StellarisWare -I C:\Keil\ARM\RV31\INC -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\Luminary -o "motion.o" --omf_browse "motion.crf" --depend "motion.d")
 I (motion.h)(0x5110FF51)
 I (sensor.h)(0x5106A006)
@@ -347,3 +355,34 @@ I (globals.h)(0x5110EB21)
 I (queue.h)(0x5110D911)
 I (usart.h)(0x5110D89C)
 F (.\motion.h)(0x5110FF51)()
+F (.\flight.h)(0x511A2AE3)()
+F (.\flight.c)(0x511A2AEB)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -IC:\StellarisWare\boards\ek-lm3s1968 -IC:\StellarisWare -I C:\Keil\ARM\RV31\INC -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\Luminary -o "flight.o" --omf_browse "flight.crf" --depend "flight.d")
+I (flight.h)(0x511A2AE3)
+I (pid.h)(0x511A2731)
+I (motion.h)(0x5110FF51)
+I (sensor.h)(0x5106A006)
+I (iic.h)(0x51027D21)
+I (includes.h)(0x510A4D5B)
+I (C:\Keil\ARM\ARMCC\bin\..\include\stdlib.h)(0x4EB14304)
+I (C:\Keil\ARM\ARMCC\bin\..\include\stdint.h)(0x4EB14304)
+I (C:\Keil\ARM\ARMCC\bin\..\include\math.h)(0x4EB14308)
+I (C:\StellarisWare\inc/hw_ints.h)(0x50FD5A46)
+I (C:\StellarisWare\inc/hw_memmap.h)(0x50FD5A46)
+I (C:\StellarisWare\inc/hw_types.h)(0x50FD5A47)
+I (C:\StellarisWare\inc/hw_i2c.h)(0x50FD5A46)
+I (C:\StellarisWare\driverlib/debug.h)(0x50FD5A46)
+I (C:\StellarisWare\driverlib/gpio.h)(0x50FD5A46)
+I (C:\StellarisWare\driverlib/pin_map.h)(0x50FD5A46)
+I (C:\StellarisWare\driverlib/interrupt.h)(0x50FD5A46)
+I (C:\StellarisWare\driverlib/sysctl.h)(0x50FD5A46)
+I (C:\StellarisWare\driverlib/uart.h)(0x50FD5A46)
+I (C:\StellarisWare\boards\ek-lm3s1968\drivers/rit128x96x4.h)(0x50FD5A42)
+I (C:\StellarisWare\driverlib/pwm.h)(0x50FD5A46)
+I (C:\StellarisWare\driverlib/fpu.h)(0x50FD5A46)
+I (C:\StellarisWare\driverlib/i2c.h)(0x50FD5A46)
+I (C:\StellarisWare\driverlib/timer.h)(0x50FD5A46)
+I (globals.h)(0x5110EB21)
+I (queue.h)(0x5110D911)
+I (usart.h)(0x5110D89C)
+I (motor.h)(0x50FE931E)
+I (mypwm.h)(0x50F9CB06)

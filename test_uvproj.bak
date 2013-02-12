@@ -581,6 +581,16 @@
               <FileType>1</FileType>
               <FilePath>.\behaviour.c</FilePath>
             </File>
+            <File>
+              <FileName>motion.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\motion.c</FilePath>
+            </File>
+            <File>
+              <FileName>motion.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\motion.h</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>

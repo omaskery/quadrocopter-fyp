@@ -591,6 +591,16 @@
               <FileType>5</FileType>
               <FilePath>.\motion.h</FilePath>
             </File>
+            <File>
+              <FileName>flight.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\flight.h</FilePath>
+            </File>
+            <File>
+              <FileName>flight.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\flight.c</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>

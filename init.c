@@ -5,9 +5,16 @@
 #include "usart.h"
 #include "mypwm.h"
 #include "motor.h"
+#include "iic.h"
+#include "sensor.h"
+#include "motion.h"
+#include "system.h"
 
-char rxBuffer[RX_BUFFER_SIZE];
-char txBuffer[TX_BUFFER_SIZE];
+char rxUsartBuffer[RX_BUFFER_SIZE];
+char txUsartBuffer[TX_BUFFER_SIZE];
+
+char rxIicBuffer[I2C_BUFFER_SIZE];
+char txIicBuffer[I2C_BUFFER_SIZE];
 
 void InterruptsEnable(void)
 {
@@ -19,6 +26,11 @@ void _ClockInitialise(void)
 	SysCtlClockSet(SYSCTL_SYSDIV_4 | SYSCTL_USE_PLL | SYSCTL_OSC_MAIN | SYSCTL_XTAL_8MHZ);
 }
 
+void _FpuInitialise(void)
+{
+	FPUEnable();
+}
+
 void _MainOledInitialise(void)
 {
 	RIT128x96x4Init(1000000);
@@ -26,8 +38,8 @@ void _MainOledInitialise(void)
 
 void _UsartInitialise(void)
 {
-	buffer rxBufferDescriptor = {RX_BUFFER_SIZE, rxBuffer};
-	buffer txBufferDescriptor = {TX_BUFFER_SIZE, txBuffer};
+	buffer rxBufferDescriptor = {RX_BUFFER_SIZE, rxUsartBuffer};
+	buffer txBufferDescriptor = {TX_BUFFER_SIZE, txUsartBuffer};
 
 	SysCtlPeripheralEnable(SYSCTL_PERIPH_UART0);
 	SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOA);
@@ -70,11 +82,63 @@ void _MotorsInitialise(void)
 	MotorInitialise(&motorB, &pwm1);
 	MotorInitialise(&motorC, &pwm2);
 	MotorInitialise(&motorD, &pwm3);
+	
+	all_motors[0] = &motorA;
+	all_motors[1] = &motorB;
+	all_motors[2] = &motorC;
+	all_motors[3] = &motorD;
+}
+
+void _IicInitialise(void)
+{
+	buffer rxBufferDescriptor = {I2C_BUFFER_SIZE, rxIicBuffer};
+	buffer txBufferDescriptor = {I2C_BUFFER_SIZE, txIicBuffer};
+	
+	SysCtlPeripheralEnable(SYSCTL_PERIPH_I2C0);
+	SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOB);
+
+	GPIOPinTypeI2C(GPIO_PORTB_BASE, GPIO_PIN_2 | GPIO_PIN_3);
+
+	GPIOPadConfigSet(GPIO_PORTB_BASE, GPIO_PIN_3, GPIO_STRENGTH_2MA, GPIO_PIN_TYPE_OD);
+  GPIOPadConfigSet(GPIO_PORTB_BASE, GPIO_PIN_2, GPIO_STRENGTH_2MA, GPIO_PIN_TYPE_OD);
+
+	GPIODirModeSet(GPIO_PORTB_BASE, GPIO_PIN_3, GPIO_DIR_MODE_HW);
+  GPIODirModeSet(GPIO_PORTB_BASE, GPIO_PIN_2, GPIO_DIR_MODE_HW);
+
+	IicInitialise(&i2c0, I2C0_MASTER_BASE, &rxBufferDescriptor, &txBufferDescriptor);
+
+	IntEnable(INT_I2C0);
+  I2CMasterIntEnableEx(I2C0_MASTER_BASE,I2C_MASTER_INT_DATA);
+}
+
+void _SensorInitialise()
+{
+	SensorInitialise(&mpu6050, &i2c0, MPU6050_ADDR);
+}
+
+void _SystemStateInitialise(void)
+{
+	SystemInitialise(&sys);
+}
+
+void _MotionInitialise(void)
+{
+	MotionInitialise(&orientation, &mpu6050);
+}
+
+void _TimerInitialise(void)
+{
+	SysCtlPeripheralEnable(SYSCTL_PERIPH_TIMER0);
+	IntEnable(INT_TIMER0A);
+	
+	TimerInitialise(&sys_timer, TIMER0_BASE, SysCtlClockGet() / 400);
+	TimerStart(&sys_timer);
 }
 
 void InitialiseSystem(void)
 {
 	_ClockInitialise();
+	_FpuInitialise();
 	_MainOledInitialise();
 	_UsartInitialise();
 	InterruptsEnable();
@@ -83,4 +147,16 @@ void InitialiseSystem(void)
 	UsartWriteLine(&usart0, "PWM Initialised");
 	_MotorsInitialise();
 	UsartWriteLine(&usart0, "Motors Initialised");
+	_IicInitialise();
+	UsartWriteLine(&usart0, "I2C Initialised");
+	_SensorInitialise();
+	UsartWriteLine(&usart0, "Sensor Initialised");
+	_SystemStateInitialise();
+	UsartWriteLine(&usart0, "System State Initialised");
+	_MotionInitialise();
+	UsartWriteLine(&usart0, "Motion Module Initialised");
+	_TimerInitialise();
+	UsartWriteLine(&usart0, "Timers initialised");
+	
+	UsartWriteLine(&usart0, "Initialisation Complete");
 }

@@ -1,21 +1,21 @@
 #include "usart.h"
 #include "globals.h"
 
-usart usart0;
+volatile usart usart0;
 
-void UsartEnableTxInterrupt(usart *this)
+void UsartEnableTxInterrupt(volatile usart *this)
 {
 	UARTIntEnable(this->usartBase, UART_INT_TX);
 	this->transmitting = 1;
 }
 
-void UsartDisableTxInterrupt(usart *this)
+void UsartDisableTxInterrupt(volatile usart *this)
 {
 	UARTIntDisable(this->usartBase, UART_INT_TX);
 	this->transmitting = 0;
 }
 
-void UsartPumpTx(usart *this)
+void UsartPumpTx(volatile usart *this)
 {
 	char buffered;
 	
@@ -27,7 +27,7 @@ void UsartPumpTx(usart *this)
 	UsartEnableTxInterrupt(this);
 }
 
-void UsartInterrupt(usart *this)
+void UsartInterrupt(volatile usart *this)
 {
 	unsigned long status;
 	char buffered;
@@ -76,7 +76,7 @@ unsigned long UsartInterruptNumberFromBase(unsigned long _usartBase)
 	return 0;
 }
 
-void UsartInitialise(usart *this, unsigned long _usartBase, unsigned long _baudrate, buffer *_receive, buffer *_transmit)
+void UsartInitialise(volatile usart *this, unsigned long _usartBase, unsigned long _baudrate, buffer *_receive, buffer *_transmit)
 {
 	unsigned long interruptBase;
 	
@@ -96,61 +96,125 @@ void UsartInitialise(usart *this, unsigned long _usartBase, unsigned long _baudr
 	QueueInitialise(&this->txQueue, _transmit);
 }
 
-int  UsartIsDataWaiting(const usart* this)
+int  UsartIsDataWaiting(const volatile usart* this)
 {
 	return !QueueIsEmpty(&this->rxQueue);
 }
 
-char UsartGet(usart *this)
+char UsartGet(volatile usart *this)
 {
 	return QueuePop(&this->rxQueue);
 }
 
-int  UsartPut(usart *this, char _data)
+int  UsartPut(volatile usart *this, char _data)
 {
-	int result = QueuePush(&this->txQueue, _data);
+	int result;
+	
+	// force code to wait, waiting for space, should highlight any timing issues pretty sharpish!
+	while(QueueIsFull(&this->txQueue));
+	
+	result = QueuePush(&this->txQueue, _data);
 	
 	UsartPumpTx(this);
 	
 	return result;
 }
 
-void UsartPutStr(usart *this, char *_str)
+void UsartPutStr(volatile usart *this, const char *_str)
 {
 	while(*_str)
 		UsartPut(this, *(_str++));
 }
 
-void UsartPutData(usart *this, char *_data, unsigned long _length)
+void UsartPutData(volatile usart *this, const char *_data, unsigned long _length)
 {
 	unsigned int i;
 	for(i = 0; i < _length; i++)
 		UsartPut(this, _data[i]);
 }
 
-void UsartPutBuffer(usart *this, buffer *_buffer)
+void UsartPutBuffer(volatile usart *this, buffer *_buffer)
 {
 	UsartPutData(this, _buffer->data, _buffer->length);
 }
 
-void UsartPutNewLine(usart *this)
+void UsartPutNewLine(volatile usart *this)
 {
 	UsartPutStr(this, "\r\n");
 }
 
-void UsartWriteLine(usart *this, char *_line)
+void UsartWriteLine(volatile usart *this, const char *_line)
 {
 	UsartPutStr(this, _line);
 	UsartPutNewLine(this);
 }
 
-void UsartFormat(usart *this, char *_format, ...)
+void UsartWriteNumber(volatile usart *this, int _number, int _bits)
 {
-	char buffer[128];
+	int mask = (1 << _bits) - 1;
+	int complement = (1 << (_bits-1));
+	
+	int started = 0;
+	int index = 0;
+	
+	char buffer[10];
+	int divider;
+	char digit;
+	int unit;
+	
+	for(unit = 0; unit < sizeof(buffer); unit++)
+		buffer[unit] = '\0';
+	
+	_number = _number & mask;
+	if(_number & complement)
+	{
+		_number = (~_number) + 1;
+		buffer[index++] = '-';
+	}
+	
+	divider = 1000000000; // 10 ^ 9, the math 'pow' function causes processor to fault, no idea why
+	for(unit = sizeof(buffer) - 1; unit >= 0; unit--)
+	{
+		digit = '0' + ((_number / divider) % 10);
+		
+		if(!started && (digit != '0' || unit == 0))
+			started = 1;
+		
+		if(started)
+			buffer[index++] = digit;
+		
+		divider /= 10;
+	}
+	
+	UsartPutStr(this, buffer);
+}
+
+void UsartWriteInt8(volatile usart *this, int8_t _number)
+{
+	UsartWriteNumber(this, _number, 8);
+}
+
+void UsartWriteInt16(volatile usart *this, int16_t _number)
+{
+	UsartWriteNumber(this, _number, 16);
+}
+
+void UsartWriteInt32(volatile usart *this, int32_t _number)
+{
+	UsartWriteNumber(this, _number, 32);
+}
+
+/*
+void UsartFormat(usart *this, const char *_format, ...)
+{
+	const int bufferSize = 128;
+	char buffer[bufferSize];
 	va_list argptr;
+	
 	va_start(argptr, _format);
-	vsnprintf(buffer, 128, _format, argptr);
+	vsnprintf(buffer, bufferSize - 1, _format, argptr);
 	va_end(argptr);
 	
 	UsartPutStr(this, buffer);
 }
+*/

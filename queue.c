@@ -1,6 +1,6 @@
 #include "queue.h"
 
-void QueueInitialise(queue *this, buffer *_storage)
+void QueueInitialise(volatile queue *this, buffer *_storage)
 {
 	this->capacity = _storage->length;
 	this->count = 0;
@@ -9,7 +9,7 @@ void QueueInitialise(queue *this, buffer *_storage)
 	this->data = _storage->data;
 }
 
-int  QueuePush(queue *this, char _data)
+int  QueuePush(volatile queue *this, char _data)
 {
 	if(QueueIsFull(this))
 		return 0;
@@ -21,7 +21,7 @@ int  QueuePush(queue *this, char _data)
 	return 1;
 }
 
-char QueuePop(queue *this)
+char QueuePop(volatile queue *this)
 {
 	char result = '\0';
 	
@@ -35,12 +35,19 @@ char QueuePop(queue *this)
 	return result;
 }
 
-int  QueueIsFull(const queue *this)
+void QueueClear(volatile queue *this)
+{
+	this->front = 0;
+	this->back = 0;
+	this->count = 0;
+}
+
+int  QueueIsFull(const volatile queue *this)
 {
 	return (this->count >= this->capacity);
 }
 
-int  QueueIsEmpty(const queue *this)
+int  QueueIsEmpty(const volatile queue *this)
 {
 	return (this->count <= 0);
 }

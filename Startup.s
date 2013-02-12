@@ -80,6 +80,8 @@ __heap_limit
 ;******************************************************************************
 
 		EXTERN  UsartInterrupt0
+		EXTERN	IicTransactionComplete0
+		EXTERN  system_think
 
         EXPORT  __Vectors
 __Vectors
@@ -107,7 +109,7 @@ __Vectors
         DCD     UsartInterrupt0             ; UART0 Rx and Tx
         DCD     IntDefaultHandler           ; UART1 Rx and Tx
         DCD     IntDefaultHandler           ; SSI0 Rx and Tx
-        DCD     IntDefaultHandler           ; I2C0 Master and Slave
+        DCD     IicTransactionComplete0     ; I2C0 Master and Slave
         DCD     IntDefaultHandler           ; PWM Fault
         DCD     IntDefaultHandler           ; PWM Generator 0
         DCD     IntDefaultHandler           ; PWM Generator 1
@@ -118,7 +120,7 @@ __Vectors
         DCD     IntDefaultHandler           ; ADC Sequence 2
         DCD     IntDefaultHandler           ; ADC Sequence 3
         DCD     IntDefaultHandler           ; Watchdog timer
-        DCD     IntDefaultHandler           ; Timer 0 subtimer A
+        DCD     system_think	            ; Timer 0 subtimer A
         DCD     IntDefaultHandler           ; Timer 0 subtimer B
         DCD     IntDefaultHandler           ; Timer 1 subtimer A
         DCD     IntDefaultHandler           ; Timer 1 subtimer B

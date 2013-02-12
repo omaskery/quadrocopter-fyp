@@ -75,7 +75,7 @@
           <AfterMake>
             <RunUserProg1>1</RunUserProg1>
             <RunUserProg2>0</RunUserProg2>
-            <UserProg1Name>D:\Dropbox\University\FYP\work\ARM\test\makebin.bat</UserProg1Name>
+            <UserProg1Name>makebin.bat</UserProg1Name>
             <UserProg2Name></UserProg2Name>
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
             <UserProg2Dos16Mode>0</UserProg2Dos16Mode>
@@ -166,7 +166,7 @@
             <DriverSelection>4101</DriverSelection>
           </Flash1>
           <Flash2>BIN\ULP2CM3.DLL</Flash2>
-          <Flash3>"D:\Apps\Luminary Micro\LM Flash Programmer\LMFlash.exe" ()</Flash3>
+          <Flash3>"C:\Program Files\Luminary Micro\LM Flash Programmer\LMFlash.exe" ()</Flash3>
           <Flash4></Flash4>
         </Utilities>
         <TargetArmAds>
@@ -343,14 +343,14 @@
             <PlainCh>0</PlainCh>
             <Ropi>0</Ropi>
             <Rwpi>0</Rwpi>
-            <wLevel>0</wLevel>
+            <wLevel>2</wLevel>
             <uThumb>0</uThumb>
             <uSurpInc>0</uSurpInc>
             <VariousControls>
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>D:\Apps\StellarisWare\boards\ek-lm3s1968;D:\Apps\StellarisWare</IncludePath>
+              <IncludePath>C:\StellarisWare\boards\ek-lm3s1968;C:\StellarisWare</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -417,9 +417,9 @@
           <GroupName>Library</GroupName>
           <Files>
             <File>
-              <FileName>driverlib.lib</FileName>
+              <FileName>driverlib-cm3.lib</FileName>
               <FileType>4</FileType>
-              <FilePath>D:\Apps\StellarisWare\driverlib\rvmdk\driverlib.lib</FilePath>
+              <FilePath>C:\StellarisWare\driverlib\rvmdk-cm3\driverlib-cm3.lib</FilePath>
             </File>
           </Files>
         </Group>
@@ -429,17 +429,27 @@
             <File>
               <FileName>ssi.c</FileName>
               <FileType>1</FileType>
-              <FilePath>D:\Apps\StellarisWare\driverlib\ssi.c</FilePath>
+              <FilePath>C:\StellarisWare\driverlib\ssi.c</FilePath>
             </File>
             <File>
               <FileName>rit128x96x4.c</FileName>
               <FileType>1</FileType>
-              <FilePath>D:\Apps\StellarisWare\boards\ek-lm3s1968\drivers\rit128x96x4.c</FilePath>
+              <FilePath>C:\StellarisWare\boards\ek-lm3s1968\drivers\rit128x96x4.c</FilePath>
             </File>
             <File>
               <FileName>pwm.c</FileName>
               <FileType>1</FileType>
-              <FilePath>D:\Apps\StellarisWare\driverlib\pwm.c</FilePath>
+              <FilePath>C:\StellarisWare\driverlib\pwm.c</FilePath>
+            </File>
+            <File>
+              <FileName>fpu.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>C:\StellarisWare\driverlib\fpu.c</FilePath>
+            </File>
+            <File>
+              <FileName>i2c.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>C:\StellarisWare\driverlib\i2c.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -465,6 +475,26 @@
               <FileName>mypwm.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\mypwm.h</FilePath>
+            </File>
+            <File>
+              <FileName>iic.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\iic.c</FilePath>
+            </File>
+            <File>
+              <FileName>iic.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\iic.h</FilePath>
+            </File>
+            <File>
+              <FileName>timer.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\timer.h</FilePath>
+            </File>
+            <File>
+              <FileName>timer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\timer.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -530,6 +560,36 @@
               <FileName>pid.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\pid.h</FilePath>
+            </File>
+            <File>
+              <FileName>system.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\system.h</FilePath>
+            </File>
+            <File>
+              <FileName>system.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\system.c</FilePath>
+            </File>
+            <File>
+              <FileName>behaviour.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\behaviour.h</FilePath>
+            </File>
+            <File>
+              <FileName>behaviour.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\behaviour.c</FilePath>
+            </File>
+            <File>
+              <FileName>motion.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\motion.c</FilePath>
+            </File>
+            <File>
+              <FileName>motion.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\motion.h</FilePath>
             </File>
           </Files>
         </Group>

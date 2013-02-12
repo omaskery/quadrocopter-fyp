@@ -3,19 +3,26 @@
 ### Creating ADS-LD Command Line
 ### List of Objects: adding '"startup.o"'
 ### List of Objects: adding '"main.o"'
-### List of Objects: adding '"D:\Apps\StellarisWare\driverlib\rvmdk\driverlib.lib"'
+### List of Objects: adding '"C:\StellarisWare\driverlib\rvmdk-cm3\driverlib-cm3.lib"'
 ### List of Objects: adding '"ssi.o"'
 ### List of Objects: adding '"rit128x96x4.o"'
 ### List of Objects: adding '"pwm.o"'
+### List of Objects: adding '"fpu.o"'
+### List of Objects: adding '"i2c.o"'
 ### List of Objects: adding '"usart.o"'
 ### List of Objects: adding '"mypwm.o"'
+### List of Objects: adding '"iic.o"'
+### List of Objects: adding '"timer.o"'
 ### List of Objects: adding '"queue.o"'
 ### List of Objects: adding '"init.o"'
 ### List of Objects: adding '"motor.o"'
 ### List of Objects: adding '"sensor.o"'
 ### List of Objects: adding '"pid.o"'
+### List of Objects: adding '"system.o"'
+### List of Objects: adding '"behaviour.o"'
+### List of Objects: adding '"motion.o"'
 ### ADS-LD Command completed:
---cpu Cortex-M3 "startup.o" "main.o" D:\Apps\StellarisWare\driverlib\rvmdk\driverlib.lib "ssi.o" "rit128x96x4.o" "pwm.o" "usart.o" "mypwm.o" "queue.o" "init.o" "motor.o" "sensor.o" "pid.o" 
+--cpu Cortex-M3 "startup.o" "main.o" C:\StellarisWare\driverlib\rvmdk-cm3\driverlib-cm3.lib "ssi.o" "rit128x96x4.o" "pwm.o" "fpu.o" "i2c.o" "usart.o" "mypwm.o" "iic.o" "timer.o" "queue.o" "init.o" "motor.o" "sensor.o" "pid.o" "system.o" "behaviour.o" "motion.o" 
 --strict --scatter "test.sct" 
 --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
 --info sizes --info totals --info unused --info veneers 
@@ -23,7 +30,7 @@
 ### ADS-LD Output File: 'test.axf'
 ### ADS-LD Command File: 'test.lnp'
 ### Checking for dirty Components...
-### Creating CmdFile 'test.lnp', Handle=0x000002E4
+### Creating CmdFile 'test.lnp', Handle=0x00000608
 ### Writing '.lnp' file
 ### ADS-LD Command file 'test.lnp' is ready.
 ### ADS-LD: About to start ADS-LD Thread.

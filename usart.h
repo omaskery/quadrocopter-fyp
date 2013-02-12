@@ -14,30 +14,39 @@ typedef struct usart_t
 } usart;
 
 // usart0 object
-extern usart usart0;
+extern volatile usart usart0;
 
 // interrupt for usart0
 void UsartInterrupt0(void);
 // initialise a usart0, takes a usart* (this), the base address of the usart, the baudratte and a pointer to two buffer objects for rx and tx
-void UsartInitialise(usart*, unsigned long, unsigned long, buffer*, buffer*);
+void UsartInitialise(volatile usart*, unsigned long, unsigned long, buffer*, buffer*);
 
 // getter for querying whether data is buffered in the RX queue
-int  UsartIsDataWaiting(const usart*);
+int  UsartIsDataWaiting(const volatile usart*);
 // get a character from the RX buffer
-char UsartGet(usart*);
+char UsartGet(volatile usart*);
 // transmit (or queue) a single character
-int  UsartPut(usart*, char);
+int  UsartPut(volatile usart*, char);
 // transmit a string delimited by '\0'
-void UsartPutStr(usart*, char*);
+void UsartPutStr(volatile usart*, const char*);
 // transmit an array of bytes, determined by the length
-void UsartPutData(usart*, char*, unsigned long);
+void UsartPutData(volatile usart*, const char*, unsigned long);
 // transmit an array of bytes, described by the buffer object
-void UsartPutBuffer(usart*, buffer*);
+void UsartPutBuffer(volatile usart*, buffer*);
 // transmit a "\r\n"
-void UsartPutNewLine(usart*);
+void UsartPutNewLine(volatile usart*);
 // transmit a string delimited by '\0' followed by "\r\n"
-void UsartWriteLine(usart*, char*);
+void UsartWriteLine(volatile usart*, const char*);
+
+// transmit values as strings
+void UsartWriteNumber(volatile usart *this, int _number, int _bits);
+// abstractions for write number:
+void UsartWriteInt8(volatile usart *this, int8_t _number);
+void UsartWriteInt16(volatile usart *this, int16_t _number);
+void UsartWriteInt32(volatile usart *this, int32_t _number);
+
 // transmit a formatted string in the same way as printf() would work
-void UsartFormat(usart*, char*, ...);
+// NOTE: there appears to be some bug with vsnprintf() which corrupts global memory!? disabling for now
+//void UsartFormat(usart*, const char*, ...);
 
 #endif

@@ -15,14 +15,16 @@ typedef struct queue_t
 } queue;
 
 // initialise a queue, takes this pointer and pointer to buffer object describing where to store data
-void QueueInitialise(queue*, buffer*);
+void QueueInitialise(volatile queue*, buffer*);
 // push a character to a queue, takes this* and character to store
-int  QueuePush(queue*, char);
+int  QueuePush(volatile queue*, char);
 // pop a character from a queue, takes this*
-char QueuePop(queue*);
+char QueuePop(volatile queue*);
+// clears all data from a queue
+void QueueClear(volatile queue*);
 // getter method to query whether a queue is full, takes const this*
-int  QueueIsFull(const queue*);
+int  QueueIsFull(const volatile queue*);
 // getter method to query whether a queue is empty, takes const this*
-int  QueueIsEmpty(const queue*);
+int  QueueIsEmpty(const volatile queue*);
 
 #endif

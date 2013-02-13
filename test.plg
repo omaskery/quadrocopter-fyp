@@ -4,9 +4,156 @@
 <h1>µVision Build Log</h1>
 <h2>Project:</h2>
 C:\Users\Student\Documents\maskeryo\ARM code\test\test.uvproj
-Project File Date:  01/30/2013
+Project File Date:  02/12/2013
 
 <h2>Output:</h2>
+Build target 'QuadrocopterFirmware'
+compiling flight.c...
+linking...
+Program Size: Code=14268 RO-data=1444 RW-data=1644 ZI-data=2124  
+User command #1: makebin.bat
+C:\Users\Student\Documents\maskeryo\ARM code\test>"C:\Keil\ARM\ARMCC\bin\fromelf.exe" test.axf --bin --output out.bin 
+"test.axf" - 0 Error(s), 0 Warning(s).
+"C:\Program Files\Luminary Micro\LM Flash Programmer\LMFlash.exe" 
+Build target 'QuadrocopterFirmware'
+compiling flight.c...
+linking...
+Program Size: Code=14268 RO-data=1444 RW-data=1644 ZI-data=2124  
+User command #1: makebin.bat
+C:\Users\Student\Documents\maskeryo\ARM code\test>"C:\Keil\ARM\ARMCC\bin\fromelf.exe" test.axf --bin --output out.bin 
+"test.axf" - 0 Error(s), 0 Warning(s).
+"C:\Program Files\Luminary Micro\LM Flash Programmer\LMFlash.exe" 
+Build target 'QuadrocopterFirmware'
+compiling flight.c...
+linking...
+Program Size: Code=14268 RO-data=1444 RW-data=1644 ZI-data=2124  
+User command #1: makebin.bat
+C:\Users\Student\Documents\maskeryo\ARM code\test>"C:\Keil\ARM\ARMCC\bin\fromelf.exe" test.axf --bin --output out.bin 
+"test.axf" - 0 Error(s), 0 Warning(s).
+"C:\Program Files\Luminary Micro\LM Flash Programmer\LMFlash.exe" 
+Build target 'QuadrocopterFirmware'
+compiling flight.c...
+linking...
+Program Size: Code=14268 RO-data=1444 RW-data=1644 ZI-data=2124  
+User command #1: makebin.bat
+C:\Users\Student\Documents\maskeryo\ARM code\test>"C:\Keil\ARM\ARMCC\bin\fromelf.exe" test.axf --bin --output out.bin 
+"test.axf" - 0 Error(s), 0 Warning(s).
+"C:\Program Files\Luminary Micro\LM Flash Programmer\LMFlash.exe" 
+Build target 'QuadrocopterFirmware'
+compiling flight.c...
+linking...
+Program Size: Code=14272 RO-data=1444 RW-data=1644 ZI-data=2124  
+User command #1: makebin.bat
+C:\Users\Student\Documents\maskeryo\ARM code\test>"C:\Keil\ARM\ARMCC\bin\fromelf.exe" test.axf --bin --output out.bin 
+"test.axf" - 0 Error(s), 0 Warning(s).
+"C:\Program Files\Luminary Micro\LM Flash Programmer\LMFlash.exe" 
+Build target 'QuadrocopterFirmware'
+compiling flight.c...
+linking...
+Program Size: Code=14272 RO-data=1444 RW-data=1644 ZI-data=2124  
+User command #1: makebin.bat
+C:\Users\Student\Documents\maskeryo\ARM code\test>"C:\Keil\ARM\ARMCC\bin\fromelf.exe" test.axf --bin --output out.bin 
+"test.axf" - 0 Error(s), 0 Warning(s).
+"C:\Program Files\Luminary Micro\LM Flash Programmer\LMFlash.exe" 
+Build target 'QuadrocopterFirmware'
+compiling flight.c...
+linking...
+Program Size: Code=14272 RO-data=1444 RW-data=1644 ZI-data=2124  
+User command #1: makebin.bat
+C:\Users\Student\Documents\maskeryo\ARM code\test>"C:\Keil\ARM\ARMCC\bin\fromelf.exe" test.axf --bin --output out.bin 
+"test.axf" - 0 Error(s), 0 Warning(s).
+"C:\Program Files\Luminary Micro\LM Flash Programmer\LMFlash.exe" 
+Build target 'QuadrocopterFirmware'
+linking...
+Program Size: Code=14272 RO-data=1444 RW-data=1644 ZI-data=2124  
+User command #1: makebin.bat
+C:\Users\Student\Documents\maskeryo\ARM code\test>"C:\Keil\ARM\ARMCC\bin\fromelf.exe" test.axf --bin --output out.bin 
+"test.axf" - 0 Error(s), 0 Warning(s).
+"C:\Program Files\Luminary Micro\LM Flash Programmer\LMFlash.exe" 
+Build target 'QuadrocopterFirmware'
+compiling flight.c...
+linking...
+Program Size: Code=14272 RO-data=1444 RW-data=1644 ZI-data=2124  
+User command #1: makebin.bat
+C:\Users\Student\Documents\maskeryo\ARM code\test>"C:\Keil\ARM\ARMCC\bin\fromelf.exe" test.axf --bin --output out.bin 
+"test.axf" - 0 Error(s), 0 Warning(s).
+"C:\Program Files\Luminary Micro\LM Flash Programmer\LMFlash.exe" 
+Build target 'QuadrocopterFirmware'
+compiling flight.c...
+linking...
+Program Size: Code=14272 RO-data=1444 RW-data=1644 ZI-data=2124  
+User command #1: makebin.bat
+C:\Users\Student\Documents\maskeryo\ARM code\test>"C:\Keil\ARM\ARMCC\bin\fromelf.exe" test.axf --bin --output out.bin 
+"test.axf" - 0 Error(s), 0 Warning(s).
+Build target 'QuadrocopterFirmware'
+compiling flight.c...
+linking...
+Program Size: Code=14272 RO-data=1444 RW-data=1644 ZI-data=2124  
+User command #1: makebin.bat
+C:\Users\Student\Documents\maskeryo\ARM code\test>"C:\Keil\ARM\ARMCC\bin\fromelf.exe" test.axf --bin --output out.bin 
+"test.axf" - 0 Error(s), 0 Warning(s).
+Build target 'QuadrocopterFirmware'
+compiling pid.c...
+linking...
+Program Size: Code=14272 RO-data=1444 RW-data=1644 ZI-data=2124  
+User command #1: makebin.bat
+C:\Users\Student\Documents\maskeryo\ARM code\test>"C:\Keil\ARM\ARMCC\bin\fromelf.exe" test.axf --bin --output out.bin 
+"test.axf" - 0 Error(s), 0 Warning(s).
+Build target 'QuadrocopterFirmware'
+linking...
+Program Size: Code=14272 RO-data=1444 RW-data=1644 ZI-data=2124  
+User command #1: makebin.bat
+C:\Users\Student\Documents\maskeryo\ARM code\test>"C:\Keil\ARM\ARMCC\bin\fromelf.exe" test.axf --bin --output out.bin 
+"test.axf" - 0 Error(s), 0 Warning(s).
+"C:\Program Files\Luminary Micro\LM Flash Programmer\LMFlash.exe" 
+Build target 'QuadrocopterFirmware'
+compiling flight.c...
+linking...
+Program Size: Code=14272 RO-data=1444 RW-data=1644 ZI-data=2124  
+User command #1: makebin.bat
+C:\Users\Student\Documents\maskeryo\ARM code\test>"C:\Keil\ARM\ARMCC\bin\fromelf.exe" test.axf --bin --output out.bin 
+"test.axf" - 0 Error(s), 0 Warning(s).
+"C:\Program Files\Luminary Micro\LM Flash Programmer\LMFlash.exe" 
+Build target 'QuadrocopterFirmware'
+compiling flight.c...
+linking...
+Program Size: Code=14268 RO-data=1444 RW-data=1644 ZI-data=2124  
+User command #1: makebin.bat
+C:\Users\Student\Documents\maskeryo\ARM code\test>"C:\Keil\ARM\ARMCC\bin\fromelf.exe" test.axf --bin --output out.bin 
+"test.axf" - 0 Error(s), 0 Warning(s).
+"C:\Program Files\Luminary Micro\LM Flash Programmer\LMFlash.exe" 
+Build target 'QuadrocopterFirmware'
+compiling flight.c...
+linking...
+Program Size: Code=14268 RO-data=1444 RW-data=1644 ZI-data=2124  
+User command #1: makebin.bat
+C:\Users\Student\Documents\maskeryo\ARM code\test>"C:\Keil\ARM\ARMCC\bin\fromelf.exe" test.axf --bin --output out.bin 
+"test.axf" - 0 Error(s), 0 Warning(s).
+"C:\Program Files\Luminary Micro\LM Flash Programmer\LMFlash.exe" 
+Build target 'QuadrocopterFirmware'
+compiling flight.c...
+linking...
+Program Size: Code=14268 RO-data=1444 RW-data=1644 ZI-data=2124  
+User command #1: makebin.bat
+C:\Users\Student\Documents\maskeryo\ARM code\test>"C:\Keil\ARM\ARMCC\bin\fromelf.exe" test.axf --bin --output out.bin 
+"test.axf" - 0 Error(s), 0 Warning(s).
+Build target 'QuadrocopterFirmware'
+compiling pid.c...
+linking...
+Program Size: Code=14268 RO-data=1444 RW-data=1644 ZI-data=2124  
+User command #1: makebin.bat
+C:\Users\Student\Documents\maskeryo\ARM code\test>"C:\Keil\ARM\ARMCC\bin\fromelf.exe" test.axf --bin --output out.bin 
+"test.axf" - 0 Error(s), 0 Warning(s).
+"C:\Program Files\Luminary Micro\LM Flash Programmer\LMFlash.exe" 
+Build target 'QuadrocopterFirmware'
+compiling main.c...
+compiling behaviour.c...
+linking...
+Program Size: Code=14308 RO-data=1444 RW-data=1644 ZI-data=2124  
+User command #1: makebin.bat
+C:\Users\Student\Documents\maskeryo\ARM code\test>"C:\Keil\ARM\ARMCC\bin\fromelf.exe" test.axf --bin --output out.bin 
+"test.axf" - 0 Error(s), 0 Warning(s).
+"C:\Program Files\Luminary Micro\LM Flash Programmer\LMFlash.exe" 
 Rebuild target 'QuadrocopterFirmware'
 assembling Startup.s...
 compiling main.c...
@@ -29,143 +176,64 @@ compiling behaviour.c...
 compiling motion.c...
 compiling flight.c...
 linking...
-Program Size: Code=13476 RO-data=1444 RW-data=1644 ZI-data=1996  
+Program Size: Code=14308 RO-data=1444 RW-data=1644 ZI-data=2124  
 User command #1: makebin.bat
 C:\Users\Student\Documents\maskeryo\ARM code\test>"C:\Keil\ARM\ARMCC\bin\fromelf.exe" test.axf --bin --output out.bin 
 "test.axf" - 0 Error(s), 0 Warning(s).
 Build target 'QuadrocopterFirmware'
 compiling pid.c...
-compiling flight.c...
-flight.h(15): error:  #20: identifier "rotation" is undefined
-flight.c(11): error:  #20: identifier "rotation" is undefined
-flight.c(13): error:  #132: expression must have pointer-to-struct-or-union type
-flight.c(14): error:  #132: expression must have pointer-to-struct-or-union type
-flight.c(15): error:  #132: expression must have pointer-to-struct-or-union type
-flight.c(52): error:  #20: identifier "_thrust" is undefined
-Target not created
-Build target 'QuadrocopterFirmware'
-compiling flight.c...
-flight.c(13): error:  #136: struct "rotation_t" has no field "x"
-flight.c(14): error:  #136: struct "rotation_t" has no field "y"
-flight.c(15): error:  #136: struct "rotation_t" has no field "z"
-flight.c(52): error:  #20: identifier "_thrust" is undefined
-Target not created
-Build target 'QuadrocopterFirmware'
-compiling flight.c...
-flight.c(52): error:  #20: identifier "_thrust" is undefined
-Target not created
-Build target 'QuadrocopterFirmware'
-compiling flight.c...
 linking...
-Program Size: Code=13476 RO-data=1444 RW-data=1644 ZI-data=1996  
+Program Size: Code=14308 RO-data=1444 RW-data=1644 ZI-data=2124  
 User command #1: makebin.bat
 C:\Users\Student\Documents\maskeryo\ARM code\test>"C:\Keil\ARM\ARMCC\bin\fromelf.exe" test.axf --bin --output out.bin 
 "test.axf" - 0 Error(s), 0 Warning(s).
+"C:\Program Files\Luminary Micro\LM Flash Programmer\LMFlash.exe" 
+Build target 'QuadrocopterFirmware'
+compiling flight.c...
+linking...
+Program Size: Code=14308 RO-data=1444 RW-data=1644 ZI-data=2124  
+User command #1: makebin.bat
+C:\Users\Student\Documents\maskeryo\ARM code\test>"C:\Keil\ARM\ARMCC\bin\fromelf.exe" test.axf --bin --output out.bin 
+"test.axf" - 0 Error(s), 0 Warning(s).
+"C:\Program Files\Luminary Micro\LM Flash Programmer\LMFlash.exe" 
+Build target 'QuadrocopterFirmware'
+compiling flight.c...
+linking...
+Program Size: Code=14312 RO-data=1444 RW-data=1644 ZI-data=2124  
+User command #1: makebin.bat
+C:\Users\Student\Documents\maskeryo\ARM code\test>"C:\Keil\ARM\ARMCC\bin\fromelf.exe" test.axf --bin --output out.bin 
+"test.axf" - 0 Error(s), 0 Warning(s).
+"C:\Program Files\Luminary Micro\LM Flash Programmer\LMFlash.exe" 
+Build target 'QuadrocopterFirmware'
+compiling flight.c...
+linking...
+Program Size: Code=14312 RO-data=1444 RW-data=1644 ZI-data=2124  
+User command #1: makebin.bat
+C:\Users\Student\Documents\maskeryo\ARM code\test>"C:\Keil\ARM\ARMCC\bin\fromelf.exe" test.axf --bin --output out.bin 
+"test.axf" - 0 Error(s), 0 Warning(s).
+"C:\Program Files\Luminary Micro\LM Flash Programmer\LMFlash.exe" 
+Build target 'QuadrocopterFirmware'
+compiling flight.c...
+linking...
+Program Size: Code=14308 RO-data=1444 RW-data=1644 ZI-data=2124  
+User command #1: makebin.bat
+C:\Users\Student\Documents\maskeryo\ARM code\test>"C:\Keil\ARM\ARMCC\bin\fromelf.exe" test.axf --bin --output out.bin 
+"test.axf" - 0 Error(s), 0 Warning(s).
+"C:\Program Files\Luminary Micro\LM Flash Programmer\LMFlash.exe" 
+Build target 'QuadrocopterFirmware'
+compiling flight.c...
+linking...
+Program Size: Code=14308 RO-data=1444 RW-data=1644 ZI-data=2124  
+User command #1: makebin.bat
+C:\Users\Student\Documents\maskeryo\ARM code\test>"C:\Keil\ARM\ARMCC\bin\fromelf.exe" test.axf --bin --output out.bin 
+"test.axf" - 0 Error(s), 0 Warning(s).
+"C:\Program Files\Luminary Micro\LM Flash Programmer\LMFlash.exe" 
+"C:\Program Files\Luminary Micro\LM Flash Programmer\LMFlash.exe" 
 Build target 'QuadrocopterFirmware'
 compiling pid.c...
 compiling flight.c...
 linking...
-Program Size: Code=13476 RO-data=1444 RW-data=1644 ZI-data=1996  
-User command #1: makebin.bat
-C:\Users\Student\Documents\maskeryo\ARM code\test>"C:\Keil\ARM\ARMCC\bin\fromelf.exe" test.axf --bin --output out.bin 
-"test.axf" - 0 Error(s), 0 Warning(s).
-Build target 'QuadrocopterFirmware'
-compiling init.c...
-compiling behaviour.c...
-compiling flight.c...
-linking...
-Program Size: Code=14068 RO-data=1444 RW-data=1644 ZI-data=2124  
-User command #1: makebin.bat
-C:\Users\Student\Documents\maskeryo\ARM code\test>"C:\Keil\ARM\ARMCC\bin\fromelf.exe" test.axf --bin --output out.bin 
-"test.axf" - 0 Error(s), 0 Warning(s).
-Rebuild target 'QuadrocopterFirmware'
-assembling Startup.s...
-compiling main.c...
-compiling ssi.c...
-compiling rit128x96x4.c...
-compiling pwm.c...
-compiling fpu.c...
-compiling i2c.c...
-compiling usart.c...
-compiling mypwm.c...
-compiling iic.c...
-compiling timer.c...
-compiling queue.c...
-compiling init.c...
-compiling motor.c...
-compiling sensor.c...
-compiling pid.c...
-compiling system.c...
-compiling behaviour.c...
-compiling motion.c...
-compiling flight.c...
-linking...
-Program Size: Code=14068 RO-data=1444 RW-data=1644 ZI-data=2124  
-User command #1: makebin.bat
-C:\Users\Student\Documents\maskeryo\ARM code\test>"C:\Keil\ARM\ARMCC\bin\fromelf.exe" test.axf --bin --output out.bin 
-"test.axf" - 0 Error(s), 0 Warning(s).
-"C:\Program Files\Luminary Micro\LM Flash Programmer\LMFlash.exe" 
-Build target 'QuadrocopterFirmware'
-compiling behaviour.c...
-linking...
-Program Size: Code=14080 RO-data=1444 RW-data=1644 ZI-data=2124  
-User command #1: makebin.bat
-C:\Users\Student\Documents\maskeryo\ARM code\test>"C:\Keil\ARM\ARMCC\bin\fromelf.exe" test.axf --bin --output out.bin 
-"test.axf" - 0 Error(s), 0 Warning(s).
-"C:\Program Files\Luminary Micro\LM Flash Programmer\LMFlash.exe" 
-Build target 'QuadrocopterFirmware'
-compiling behaviour.c...
-linking...
-Program Size: Code=14128 RO-data=1444 RW-data=1644 ZI-data=2124  
-User command #1: makebin.bat
-C:\Users\Student\Documents\maskeryo\ARM code\test>"C:\Keil\ARM\ARMCC\bin\fromelf.exe" test.axf --bin --output out.bin 
-"test.axf" - 0 Error(s), 0 Warning(s).
-Build target 'QuadrocopterFirmware'
-linking...
-Program Size: Code=14128 RO-data=1444 RW-data=1644 ZI-data=2124  
-User command #1: makebin.bat
-C:\Users\Student\Documents\maskeryo\ARM code\test>"C:\Keil\ARM\ARMCC\bin\fromelf.exe" test.axf --bin --output out.bin 
-"test.axf" - 0 Error(s), 0 Warning(s).
-"C:\Program Files\Luminary Micro\LM Flash Programmer\LMFlash.exe" 
-Build target 'QuadrocopterFirmware'
-compiling main.c...
-linking...
-Program Size: Code=14128 RO-data=1444 RW-data=1644 ZI-data=2124  
-User command #1: makebin.bat
-C:\Users\Student\Documents\maskeryo\ARM code\test>"C:\Keil\ARM\ARMCC\bin\fromelf.exe" test.axf --bin --output out.bin 
-"test.axf" - 0 Error(s), 0 Warning(s).
-Build target 'QuadrocopterFirmware'
-compiling main.c...
-linking...
-Program Size: Code=14200 RO-data=1444 RW-data=1644 ZI-data=2124  
-User command #1: makebin.bat
-C:\Users\Student\Documents\maskeryo\ARM code\test>"C:\Keil\ARM\ARMCC\bin\fromelf.exe" test.axf --bin --output out.bin 
-"test.axf" - 0 Error(s), 0 Warning(s).
-"C:\Program Files\Luminary Micro\LM Flash Programmer\LMFlash.exe" 
-Build target 'QuadrocopterFirmware'
-compiling main.c...
-linking...
-Program Size: Code=14256 RO-data=1444 RW-data=1644 ZI-data=2124  
-User command #1: makebin.bat
-C:\Users\Student\Documents\maskeryo\ARM code\test>"C:\Keil\ARM\ARMCC\bin\fromelf.exe" test.axf --bin --output out.bin 
-"test.axf" - 0 Error(s), 0 Warning(s).
-Build target 'QuadrocopterFirmware'
-linking...
-Program Size: Code=14256 RO-data=1444 RW-data=1644 ZI-data=2124  
-User command #1: makebin.bat
-C:\Users\Student\Documents\maskeryo\ARM code\test>"C:\Keil\ARM\ARMCC\bin\fromelf.exe" test.axf --bin --output out.bin 
-"test.axf" - 0 Error(s), 0 Warning(s).
-Build target 'QuadrocopterFirmware'
-linking...
-Program Size: Code=14256 RO-data=1444 RW-data=1644 ZI-data=2124  
-User command #1: makebin.bat
-C:\Users\Student\Documents\maskeryo\ARM code\test>"C:\Keil\ARM\ARMCC\bin\fromelf.exe" test.axf --bin --output out.bin 
-"test.axf" - 0 Error(s), 0 Warning(s).
-"C:\Program Files\Luminary Micro\LM Flash Programmer\LMFlash.exe" 
-Build target 'QuadrocopterFirmware'
-compiling main.c...
-linking...
-Program Size: Code=14260 RO-data=1444 RW-data=1644 ZI-data=2124  
+Program Size: Code=14308 RO-data=1444 RW-data=1644 ZI-data=2124  
 User command #1: makebin.bat
 C:\Users\Student\Documents\maskeryo\ARM code\test>"C:\Keil\ARM\ARMCC\bin\fromelf.exe" test.axf --bin --output out.bin 
 "test.axf" - 0 Error(s), 0 Warning(s).
@@ -173,7 +241,14 @@ C:\Users\Student\Documents\maskeryo\ARM code\test>"C:\Keil\ARM\ARMCC\bin\fromelf
 Build target 'QuadrocopterFirmware'
 compiling flight.c...
 linking...
-Program Size: Code=14264 RO-data=1444 RW-data=1644 ZI-data=2124  
+Program Size: Code=14312 RO-data=1444 RW-data=1644 ZI-data=2124  
+User command #1: makebin.bat
+C:\Users\Student\Documents\maskeryo\ARM code\test>"C:\Keil\ARM\ARMCC\bin\fromelf.exe" test.axf --bin --output out.bin 
+"test.axf" - 0 Error(s), 0 Warning(s).
+"C:\Program Files\Luminary Micro\LM Flash Programmer\LMFlash.exe" 
+Build target 'QuadrocopterFirmware'
+linking...
+Program Size: Code=14312 RO-data=1444 RW-data=1644 ZI-data=2124  
 User command #1: makebin.bat
 C:\Users\Student\Documents\maskeryo\ARM code\test>"C:\Keil\ARM\ARMCC\bin\fromelf.exe" test.axf --bin --output out.bin 
 "test.axf" - 0 Error(s), 0 Warning(s).
@@ -181,7 +256,7 @@ C:\Users\Student\Documents\maskeryo\ARM code\test>"C:\Keil\ARM\ARMCC\bin\fromelf
 Build target 'QuadrocopterFirmware'
 compiling flight.c...
 linking...
-Program Size: Code=14264 RO-data=1444 RW-data=1644 ZI-data=2124  
+Program Size: Code=14312 RO-data=1444 RW-data=1644 ZI-data=2124  
 User command #1: makebin.bat
 C:\Users\Student\Documents\maskeryo\ARM code\test>"C:\Keil\ARM\ARMCC\bin\fromelf.exe" test.axf --bin --output out.bin 
 "test.axf" - 0 Error(s), 0 Warning(s).
@@ -189,25 +264,8 @@ C:\Users\Student\Documents\maskeryo\ARM code\test>"C:\Keil\ARM\ARMCC\bin\fromelf
 Build target 'QuadrocopterFirmware'
 compiling flight.c...
 linking...
-Program Size: Code=14264 RO-data=1444 RW-data=1644 ZI-data=2124  
+Program Size: Code=14308 RO-data=1444 RW-data=1644 ZI-data=2124  
 User command #1: makebin.bat
 C:\Users\Student\Documents\maskeryo\ARM code\test>"C:\Keil\ARM\ARMCC\bin\fromelf.exe" test.axf --bin --output out.bin 
 "test.axf" - 0 Error(s), 0 Warning(s).
-"C:\Program Files\Luminary Micro\LM Flash Programmer\LMFlash.exe" 
-Build target 'QuadrocopterFirmware'
-compiling flight.c...
-linking...
-Program Size: Code=14264 RO-data=1444 RW-data=1644 ZI-data=2124  
-User command #1: makebin.bat
-C:\Users\Student\Documents\maskeryo\ARM code\test>"C:\Keil\ARM\ARMCC\bin\fromelf.exe" test.axf --bin --output out.bin 
-"test.axf" - 0 Error(s), 0 Warning(s).
-"C:\Program Files\Luminary Micro\LM Flash Programmer\LMFlash.exe" 
-Build target 'QuadrocopterFirmware'
-compiling flight.c...
-linking...
-Program Size: Code=14264 RO-data=1444 RW-data=1644 ZI-data=2124  
-User command #1: makebin.bat
-C:\Users\Student\Documents\maskeryo\ARM code\test>"C:\Keil\ARM\ARMCC\bin\fromelf.exe" test.axf --bin --output out.bin 
-"test.axf" - 0 Error(s), 0 Warning(s).
-"C:\Program Files\Luminary Micro\LM Flash Programmer\LMFlash.exe" 
 "C:\Program Files\Luminary Micro\LM Flash Programmer\LMFlash.exe" 

@@ -45,6 +45,13 @@ int main(void)
 					FlightSetThrust(&flight_module, flight_module.thrust - 0.05f);
 					UsartWriteLine(&usart0, "Decreasing thrust");
 				}
+				else if(c == 'z')
+				{
+					orientation.angle.x = 0.0f;
+					orientation.angle.y = 0.0f;
+					orientation.angle.z = 0.0f;
+					UsartWriteLine(&usart0, "Zeroing orientation");
+				}
 		#ifdef MOTOR_CONFIG
 				else if(c == 'M')
 				{

@@ -11,8 +11,8 @@ void PidInitialise(pid *this, float _p, float _i, float _d)
 	this->output = 0.0f;
 	this->integral = 0.0f;
 	// arbitrary atm!
-	this->integralMax = 1.0f;
-	this->integralMin = -1.0f;
+	this->integralMax = 0.5f;
+	this->integralMin = -0.5f;
 }
 
 void PidSetTarget(pid *this, float _target)

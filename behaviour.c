@@ -65,7 +65,7 @@ void _Mode_Warmup(system_status *this)
 // starts motors after warmup phase
 void _Mode_MotorStart(system_status *this)
 {
-	const unsigned long startDelay = (one_second);
+	const unsigned long startDelay = five_msecond * 50;
 	static unsigned long delay = startDelay;
 	static int motorIndex = 0;
 	static int calibrated = 0;
@@ -139,7 +139,7 @@ void _Mode_Running(system_status *this)
 	if(this->modeChanged)
 	{
 		UsartWriteLine(&usart0, "Running!");
-		FlightSetThrust(&flight_module, 0.15);
+		FlightSetThrust(&flight_module, 0.10);
 	}
 	
 	if(toggle ++ >= everyOther)

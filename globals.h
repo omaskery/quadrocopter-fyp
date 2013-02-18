@@ -4,6 +4,7 @@
 // compiler switch that builds system for motor configuration
 // comment out for normal operation
 //#define MOTOR_CONFIG
+//#define TEST_MODE
 
 // the baudrate for the USB usart
 #define	USART0_BAUDRATE		256000

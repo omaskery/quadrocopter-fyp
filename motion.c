@@ -1,4 +1,5 @@
 #include "motion.h"
+#include "system.h"
 
 rotation orientation;
 
@@ -90,13 +91,41 @@ void _MotionCallback(sensor *_sensor)
 		UsartPutNewLine(&usart0);
 		*/
 		
-		UsartPutStr(&usart0, "g/s\t");
-		UsartWriteInt32(&usart0, (int32_t)orientation.angle.x);
+#define USE_HEX
+		
+#ifndef USE_HEX
+		UsartPutStr(&usart0, "data\t");
+		UsartWriteInt32(&usart0, (sys.milliseconds));
 		UsartPut(&usart0, '\t');
-		UsartWriteInt32(&usart0, (int32_t)orientation.angle.y);
+		UsartWriteInt32(&usart0, (int32_t)(orientation.angle.x * 100.0f));
 		UsartPut(&usart0, '\t');
-		UsartWriteInt32(&usart0, (int32_t)orientation.angle.z);
+		UsartWriteInt32(&usart0, (int32_t)(orientation.angle.y * 100.0f));
+		UsartPut(&usart0, '\t');
+		UsartWriteInt32(&usart0, (int32_t)(orientation.angle.z * 100.0f));
+		UsartPut(&usart0, '\t');
+		UsartWriteInt32(&usart0, (orientation.rate.x));
+		UsartPut(&usart0, '\t');
+		UsartWriteInt32(&usart0, (orientation.rate.y));
+		UsartPut(&usart0, '\t');
+		UsartWriteInt32(&usart0, (orientation.rate.z));
 		UsartPutNewLine(&usart0);
+#else
+		UsartPutStr(&usart0, "data\t");
+		UsartWriteHex32(&usart0, (sys.milliseconds), 1);
+		UsartPut(&usart0, '\t');
+		UsartWriteHex16(&usart0, (int32_t)(orientation.angle.x * 100.0f), 1);
+		UsartPut(&usart0, '\t');
+		UsartWriteHex16(&usart0, (int32_t)(orientation.angle.y * 100.0f), 1);
+		UsartPut(&usart0, '\t');
+		UsartWriteHex16(&usart0, (int32_t)(orientation.angle.z * 100.0f), 1);
+		//UsartPut(&usart0, '\t');
+		//UsartWriteHex16(&usart0, (orientation.rate.x), 1);
+		//UsartPut(&usart0, '\t');
+		//UsartWriteHex16(&usart0, (orientation.rate.y), 1);
+		//UsartPut(&usart0, '\t');
+		//UsartWriteHex16(&usart0, (orientation.rate.z), 1);
+		UsartPutNewLine(&usart0);
+#endif
 	}
 	else
 	{

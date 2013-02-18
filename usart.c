@@ -204,6 +204,35 @@ void UsartWriteInt32(volatile usart *this, int32_t _number)
 	UsartWriteNumber(this, _number, 32);
 }
 
+void UsartWriteHex4(volatile usart *this, uint8_t _number, int _allowZero)
+{
+	_number &= 0x0F;
+	if(!_allowZero && _number == 0)
+		return;
+	if(_number <= 9)
+		UsartPut(this, '0' + _number);
+	else if(_number >= 10 && _number <= 15)
+		UsartPut(this, 'A' + (_number - 10));
+}
+
+void UsartWriteHex8(volatile usart *this, uint8_t _number, int _allowZero)
+{
+	UsartWriteHex4(this, _number >> 4, 0);
+	UsartWriteHex4(this, _number, _allowZero);
+}
+
+void UsartWriteHex16(volatile usart *this, uint16_t _number, int _allowZero)
+{
+	UsartWriteHex8(this, _number >> 8, 0);
+	UsartWriteHex8(this, _number & 0xFF, _allowZero);
+}
+
+void UsartWriteHex32(volatile usart *this, uint32_t _number, int _allowZero)
+{
+	UsartWriteHex16(this, _number >> 16, 0);
+	UsartWriteHex16(this, _number & 0xFFFF, _allowZero);
+}
+
 /*
 void UsartFormat(usart *this, const char *_format, ...)
 {

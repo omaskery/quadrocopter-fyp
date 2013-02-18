@@ -7,7 +7,7 @@ void FlightInitialise(flight *this)
 {
 	this->thrust = 0.0f;
 	PidInitialise(&this->roll,   0.020f, 0.020f, 0.040f);
-	PidInitialise(&this->pitch,  0.010f, 0.000f, 0.000f);
+	PidInitialise(&this->pitch,  0.000f, 0.000f, 0.000f);
   PidInitialise(&this->yaw,    0.000f, 0.000f, 0.000f);
 }
 

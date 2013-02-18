@@ -40,10 +40,14 @@ void UsartWriteLine(volatile usart*, const char*);
 
 // transmit values as strings
 void UsartWriteNumber(volatile usart *this, int _number, int _bits);
-// abstractions for write number:
+// abstractions for writing number:
 void UsartWriteInt8(volatile usart *this, int8_t _number);
 void UsartWriteInt16(volatile usart *this, int16_t _number);
 void UsartWriteInt32(volatile usart *this, int32_t _number);
+void UsartWriteHex4(volatile usart *this, uint8_t _number, int _allowZero);
+void UsartWriteHex8(volatile usart *this, uint8_t _number, int _allowZero);
+void UsartWriteHex16(volatile usart *this, uint16_t _number, int _allowZero);
+void UsartWriteHex32(volatile usart *this, uint32_t _number, int _allowZero);
 
 // transmit a formatted string in the same way as printf() would work
 // NOTE: there appears to be some bug with vsnprintf() which corrupts global memory!? disabling for now

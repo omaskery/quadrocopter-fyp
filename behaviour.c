@@ -176,3 +176,49 @@ void _Mode_MotorConfigure(system_status *this)
 			MotorSetPower(all_motors[i], 1.0f);
 	}
 }
+
+void _Mode_TestMode(system_status *this)
+{
+	const int realRate = 1;
+	const int everyOther = realRate;
+	static int toggle = 0;
+	static int untilStart = 0;
+	static int started = 0;
+	
+	if(this->modeChanged)
+	{
+		int i;
+		MotorsEnableAll(all_motors, 4);
+		for(i = 0; i < 4; i++)
+			MotorSetPower(all_motors[i], 0.0f);
+		
+		untilStart = 2 * one_second;
+		started = 0;
+		UsartWriteLine(&usart0, "entered Test Mode, motors enabled");
+	}
+	
+	if(toggle ++ >= everyOther)
+	{
+		toggle = 0;
+		SensorOpGetMotion6(&mpu6050);
+	}
+	
+	if(untilStart > 0)
+	{
+		untilStart --;
+		if(untilStart == 0)
+		{
+			UsartWriteLine(&usart0, "start delay complete, waiting for calibration!");
+		}
+	}
+	else
+	{
+		if(!started && MotionIsCalibrated())
+		{
+			started = 1;
+			MotorSetPower(&motorD, 1.0f);
+			MotorSetPower(&motorB, 0.0f);
+			UsartWriteLine(&usart0, "motors away!");
+		}
+	}
+}

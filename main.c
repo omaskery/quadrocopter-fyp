@@ -18,6 +18,17 @@ void system_think(void)
 	IntMasterEnable();
 }
 
+void timer_think(void)
+{
+	IntMasterDisable();
+	
+	TimerIntClear(TIMER1_BASE, TIMER_TIMA_TIMEOUT);
+	
+	sys.milliseconds ++;
+	
+	IntMasterEnable();
+}
+
 int main(void)
 {
 	InitialiseSystem();

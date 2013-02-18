@@ -9,11 +9,13 @@ typedef void (*mode_function)(struct system_status_t*);
 // system status structure
 typedef struct system_status_t
 {
+	uint32_t milliseconds;	// current system time in milliseconds
 	mode_function mode;			// current 'mode' function to be run
 	int modeChanged:1;			// flag indicating whether mode has just been switched to, requiring initialisation
 	int killflag:1;					// flag indicating system should go into a safe state, forcing motors off
 } system_status;
 
+extern timer global_timer;
 extern system_status sys;
 extern timer sys_timer;
 

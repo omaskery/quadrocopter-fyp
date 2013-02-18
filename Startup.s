@@ -82,6 +82,7 @@ __heap_limit
 		EXTERN  UsartInterrupt0
 		EXTERN	IicTransactionComplete0
 		EXTERN  system_think
+		EXTERN  timer_think
 
         EXPORT  __Vectors
 __Vectors
@@ -122,7 +123,7 @@ __Vectors
         DCD     IntDefaultHandler           ; Watchdog timer
         DCD     system_think	            ; Timer 0 subtimer A
         DCD     IntDefaultHandler           ; Timer 0 subtimer B
-        DCD     IntDefaultHandler           ; Timer 1 subtimer A
+        DCD     timer_think                 ; Timer 1 subtimer A
         DCD     IntDefaultHandler           ; Timer 1 subtimer B
         DCD     IntDefaultHandler           ; Timer 2 subtimer A
         DCD     IntDefaultHandler           ; Timer 2 subtimer B

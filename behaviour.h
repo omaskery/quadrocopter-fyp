@@ -13,4 +13,7 @@ void _Mode_Dead(system_status*);
 // mode for configuring motors on startup
 void _Mode_MotorConfigure(system_status*);
 
+// mode for doing general tests
+void _Mode_TestMode(system_status*);
+
 #endif

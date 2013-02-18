@@ -4,28 +4,24 @@
 #include "globals.h"
 #include "usart.h"
 
+timer global_timer;
 system_status sys;
 timer sys_timer;
 
 void SystemInitialise(system_status *this)
 {
-#ifdef MOTOR_CONFIG
-	const int configureMotors = 1;
-#else
-	const int configureMotors = 0;
-#endif
-	
 	this->killflag = 0;
 	this->modeChanged = 0;
-	
-	if(!configureMotors)
-	{
-		SystemSetMode(this, _Mode_Warmup);
-	}
-	else
-	{
-		SystemSetMode(this, _Mode_MotorConfigure);
-	}
+
+#ifdef MOTOR_CONFIG		// check for motor config mode
+	SystemSetMode(this, _Mode_MotorConfigure);
+#else
+#ifdef TEST_MODE			// check for test mode
+	SystemSetMode(this, _Mode_TestMode);
+#else									// otherwise normal operation
+	SystemSetMode(this, _Mode_Warmup);
+#endif
+#endif
 }
 
 void SystemSetMode(system_status *this, mode_function _mode)

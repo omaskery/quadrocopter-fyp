@@ -135,10 +135,14 @@ void _FlightInitialise(void)
 void _TimerInitialise(void)
 {
 	SysCtlPeripheralEnable(SYSCTL_PERIPH_TIMER0);
+	SysCtlPeripheralEnable(SYSCTL_PERIPH_TIMER1);
 	IntEnable(INT_TIMER0A);
+	IntEnable(INT_TIMER1A);
 	
 	TimerInitialise(&sys_timer, TIMER0_BASE, SysCtlClockGet() / 400);
+	TimerInitialise(&global_timer, TIMER1_BASE, SysCtlClockGet() / 1000);
 	TimerStart(&sys_timer);
+	TimerStart(&global_timer);
 }
 
 void InitialiseSystem(void)

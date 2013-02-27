@@ -204,33 +204,70 @@ void UsartWriteInt32(volatile usart *this, int32_t _number)
 	UsartWriteNumber(this, _number, 32);
 }
 
-void UsartWriteHex4(volatile usart *this, uint8_t _number, int _allowZero)
+char NibbleToHex(uint8_t _nibble)
 {
-	_number &= 0x0F;
-	if(!_allowZero && _number == 0)
-		return;
-	if(_number <= 9)
-		UsartPut(this, '0' + _number);
-	else if(_number >= 10 && _number <= 15)
-		UsartPut(this, 'A' + (_number - 10));
+	_nibble &= 0x0F;
+	if(_nibble <= 9)
+		return ('0' + _nibble);
+	else if(_nibble >= 10 && _nibble <= 15)
+		return ('A' + (_nibble - 10));
+	return 'x';
 }
 
-void UsartWriteHex8(volatile usart *this, uint8_t _number, int _allowZero)
+void UsartWriteHexX(volatile usart *this, uint32_t _number, int _nibbles)
 {
-	UsartWriteHex4(this, _number >> 4, 0);
-	UsartWriteHex4(this, _number, _allowZero);
+	int nibble;
+	int seenNonZero = 0;
+	char digit;
+	
+	char output[9];
+	int  outputLength = 0;
+	
+	for(nibble = _nibbles-1; nibble >= 0; nibble--)
+	{
+		digit = ((_number >> (nibble * 4)) & 0xF);
+		seenNonZero = seenNonZero || (digit != 0);
+		if(seenNonZero || (nibble == 0)) {
+			output[outputLength++] = NibbleToHex(digit);
+		}
+	}
+	
+	output[outputLength] = '\0';
+	UsartPutStr(this, output);
 }
 
-void UsartWriteHex16(volatile usart *this, uint16_t _number, int _allowZero)
+void UsartWriteHex4(volatile usart *this, uint8_t _number)
 {
+	UsartWriteHexX(this, _number, 1);
+}
+
+void UsartWriteHex8(volatile usart *this, uint8_t _number)
+{
+	/*
+	int seenNonZero = 0;
+	UsartWriteHex4(this, _number >> 4, seenNonZero);
+	if(((_number >> 4) & 0xF) != 0) seenNonZer = 1;
+	UsartWriteHex4(this, _number, seenNonZero);
+	*/
+	UsartWriteHexX(this, _number, 2);
+}
+
+void UsartWriteHex16(volatile usart *this, uint16_t _number)
+{
+	/*
 	UsartWriteHex8(this, _number >> 8, 0);
 	UsartWriteHex8(this, _number & 0xFF, _allowZero);
+	*/
+	UsartWriteHexX(this, _number, 4);
 }
 
-void UsartWriteHex32(volatile usart *this, uint32_t _number, int _allowZero)
+void UsartWriteHex32(volatile usart *this, uint32_t _number)
 {
+	/*
 	UsartWriteHex16(this, _number >> 16, 0);
 	UsartWriteHex16(this, _number & 0xFFFF, _allowZero);
+	*/
+	UsartWriteHexX(this, _number, 8);
 }
 
 /*

@@ -44,13 +44,13 @@ int  MotionIsCalibrated(void)
 
 void _MotionCallback(sensor *_sensor)
 {
-	const int zeroDriftMax = 10;
-	static int zeroDrift = 0;
+	//const int zeroDriftMax = 10;
+	//static int zeroDrift = 0;
 	
 	if(calibrated)
 	{
 		const float dtCoefficient = 1.0f / 200.0f;
-		const float driftCoefficient = 0.999f;
+		//const float driftCoefficient = 0.999f;
 		const int32_t lsbDivider = 65;
 		rotation_component latest;
 		//rotation_component display;
@@ -72,6 +72,8 @@ void _MotionCallback(sensor *_sensor)
 		orientation.angle.y += (orientation.rate.y * dtCoefficient);
 		orientation.angle.z += (orientation.rate.z * dtCoefficient);
 		
+		/*
+		// drift towads zero behaviour, supervisor thinks this is a bad idea!
 		if(zeroDrift++ >= zeroDriftMax)
 		{
 			zeroDrift = 0;
@@ -79,6 +81,7 @@ void _MotionCallback(sensor *_sensor)
 			orientation.angle.y *= driftCoefficient;
 			orientation.angle.z *= driftCoefficient;
 		}
+		*/
 		
 		/*
 		display = orientation.rate;
@@ -111,13 +114,13 @@ void _MotionCallback(sensor *_sensor)
 		UsartPutNewLine(&usart0);
 #else
 		UsartPutStr(&usart0, "data\t");
-		UsartWriteHex32(&usart0, (sys.milliseconds), 1);
+		UsartWriteHex32(&usart0, (sys.milliseconds));
 		UsartPut(&usart0, '\t');
-		UsartWriteHex16(&usart0, (int32_t)(orientation.angle.x * 100.0f), 1);
+		UsartWriteHex16(&usart0, (int32_t)(orientation.angle.x * 100.0f));
 		UsartPut(&usart0, '\t');
-		UsartWriteHex16(&usart0, (int32_t)(orientation.angle.y * 100.0f), 1);
+		UsartWriteHex16(&usart0, (int32_t)(orientation.angle.y * 100.0f));
 		UsartPut(&usart0, '\t');
-		UsartWriteHex16(&usart0, (int32_t)(orientation.angle.z * 100.0f), 1);
+		UsartWriteHex16(&usart0, (int32_t)(orientation.angle.z * 100.0f));
 		//UsartPut(&usart0, '\t');
 		//UsartWriteHex16(&usart0, (orientation.rate.x), 1);
 		//UsartPut(&usart0, '\t');

@@ -4,14 +4,14 @@
 // compiler switch that builds system for motor configuration
 // comment out for normal operation
 //#define MOTOR_CONFIG
-//#define TEST_MODE
+#define TEST_MODE
 
 // the baudrate for the USB usart
-#define	USART0_BAUDRATE		256000
+#define	USART0_BAUDRATE		115200
 
 // the buffer sizes of the transmit/receive queues
 #define	RX_BUFFER_SIZE		256
-#define	TX_BUFFER_SIZE		1024
+#define	TX_BUFFER_SIZE		2048
 
 // the buffer size for the I2C interface
 #define I2C_BUFFER_SIZE		32

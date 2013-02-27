@@ -201,6 +201,8 @@ void _Mode_TestMode(system_status *this)
 	{
 		toggle = 0;
 		SensorOpGetMotion6(&mpu6050);
+		// emulate sensor output for usart debugging:
+		//UsartWriteLine(&usart0, "data\tffff\tffff\tff\tf");
 	}
 	
 	if(untilStart > 0)

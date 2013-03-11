@@ -121,12 +121,12 @@ void _MotionCallback(sensor *_sensor)
 		UsartWriteHex16(&usart0, (int32_t)(orientation.angle.y * 100.0f));
 		UsartPut(&usart0, '\t');
 		UsartWriteHex16(&usart0, (int32_t)(orientation.angle.z * 100.0f));
-		//UsartPut(&usart0, '\t');
-		//UsartWriteHex16(&usart0, (orientation.rate.x), 1);
-		//UsartPut(&usart0, '\t');
-		//UsartWriteHex16(&usart0, (orientation.rate.y), 1);
-		//UsartPut(&usart0, '\t');
-		//UsartWriteHex16(&usart0, (orientation.rate.z), 1);
+		UsartPut(&usart0, '\t');
+		UsartWriteHex16(&usart0, (orientation.rate.x));
+		UsartPut(&usart0, '\t');
+		UsartWriteHex16(&usart0, (orientation.rate.y));
+		UsartPut(&usart0, '\t');
+		UsartWriteHex16(&usart0, (orientation.rate.z));
 		UsartPutNewLine(&usart0);
 #endif
 	}

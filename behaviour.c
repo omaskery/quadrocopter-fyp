@@ -192,7 +192,7 @@ void _Mode_TestMode(system_status *this)
 		for(i = 0; i < 4; i++)
 			MotorSetPower(all_motors[i], 0.0f);
 		
-		untilStart = 2 * one_second;
+		untilStart = 5 * one_second;
 		started = 0;
 		UsartWriteLine(&usart0, "entered Test Mode, motors enabled");
 	}
@@ -211,6 +211,8 @@ void _Mode_TestMode(system_status *this)
 		if(untilStart == 0)
 		{
 			UsartWriteLine(&usart0, "start delay complete, waiting for calibration!");
+			MotorSetPower(&motorD, 0.05f);
+			//MotorSetPower(&motorB, 0.05f);
 		}
 	}
 	else

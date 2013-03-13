@@ -4,7 +4,13 @@
 // compiler switch that builds system for motor configuration
 // comment out for normal operation
 //#define MOTOR_CONFIG
-#define TEST_MODE
+//#define TEST_MODE
+
+// if defined writes out data from motion subsystem, otherwise does not
+#define DEBUG_MOTION
+
+// sets wheter acceleration values are passed into the PID rather than absolute rotation
+//#define USE_ACCELERATION
 
 // the baudrate for the USB usart
 #define	USART0_BAUDRATE		115200

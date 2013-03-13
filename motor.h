@@ -27,4 +27,7 @@ void MotorsEnableAll(motor**, int);
 // enable all motors
 void MotorsDisableAll(motor**, int);
 
+// allow a global moter power clamp for safety
+void MotorSetSafetyClamps(float _min, float _max);
+
 #endif

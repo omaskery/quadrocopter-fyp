@@ -93,7 +93,9 @@ void _MotionCallback(sensor *_sensor)
 		UsartWriteInt32(&usart0, display.z);
 		UsartPutNewLine(&usart0);
 		*/
-		
+
+#ifdef DEBUG_MOTION
+
 #define USE_HEX
 		
 #ifndef USE_HEX
@@ -112,7 +114,7 @@ void _MotionCallback(sensor *_sensor)
 		UsartPut(&usart0, '\t');
 		UsartWriteInt32(&usart0, (orientation.rate.z));
 		UsartPutNewLine(&usart0);
-#else
+#else // USE_HEX
 		UsartPutStr(&usart0, "data\t");
 		UsartWriteHex32(&usart0, (sys.milliseconds));
 		UsartPut(&usart0, '\t');
@@ -128,7 +130,9 @@ void _MotionCallback(sensor *_sensor)
 		UsartPut(&usart0, '\t');
 		UsartWriteHex16(&usart0, (orientation.rate.z));
 		UsartPutNewLine(&usart0);
-#endif
+#endif // USE_HEX
+
+#endif // DEBUG_MOTION
 	}
 	else
 	{

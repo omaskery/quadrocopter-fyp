@@ -6,6 +6,8 @@
 motor motorA, motorB, motorC, motorD;
 motor *all_motors[4];
 
+float __globalMotorMin = 0.0f, __globalMotorMax = 1.0f;
+
 void MotorInitialise(motor *this, pwm *_output)
 {
 	this->output = _output;
@@ -24,10 +26,10 @@ void MotorSetPower(motor *this, float _power)
 		unsigned long maximum = millisecond * 2.1f;
 		unsigned long range = maximum - minimum;
 		
-		if(_power < 0.0f)
-			_power = 0.0f;
-		else if(_power > 1.0f)
-			_power = 1.0f;
+		if(_power < __globalMotorMin)
+			_power = __globalMotorMin;
+		else if(_power > __globalMotorMax)
+			_power = __globalMotorMax;
 		
 		this->power = _power;
 		this->cycles = minimum + (this->power * range);
@@ -67,4 +69,19 @@ void MotorsDisableAll(motor **_motors, int _count)
 		motor *m = _motors[i];
 		MotorOff(m);
 	}
+}
+
+void MotorSetSafetyClamps(float _min, float _max)
+{
+	if(_min > _max) {
+		float swap = _max;
+		_max = _min;
+		_min = swap;
+	}
+	
+	if(_min < 0.0f) _min = 0.0f;
+	if(_max > 1.0f) _max = 1.0f;
+	
+	__globalMotorMin = _min;
+	__globalMotorMax = _max;
 }

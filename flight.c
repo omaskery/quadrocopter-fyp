@@ -6,16 +6,19 @@ flight flight_module;
 void FlightInitialise(flight *this)
 {
 	this->thrust = 0.0f;
+	this->desiredRoll = 0.0f;
+	this->desiredPitch = 0.0f;
+	this->desiredYaw = 0.0f;
 #ifndef USE_ACCELERATION // PID for absolute angles
 	PidInitialise(&this->roll,   0.002f, 0.001f, 0.001f);
 	PidInitialise(&this->pitch,  0.000f, 0.000f, 0.000f);
   PidInitialise(&this->yaw,    0.000f, 0.000f, 0.000f);
-#else // USE_ACCELERATION - PID for rotational rates
-	PidInitialise(&this->roll,   1.000f, 0.400f, 0.100f);
+#else // USE_ACCELERATION - PID for rotational rates (calculated: 147, 0.1, 0.025)
+	PidInitialise(&this->roll,   0.500f, 0.100f, 0.040f);
 	PidInitialise(&this->pitch,  0.000f, 0.000f, 0.000f);
   PidInitialise(&this->yaw,    0.000f, 0.000f, 0.000f);
 #endif // USE_ACCELERATION
-	MotorSetSafetyClamps(0.0f, 0.20f);
+	MotorSetSafetyClamps(0.050f, 0.400f);
 }
 
 void FlightUpdate(flight *this, rotation *_rot)
@@ -25,6 +28,12 @@ void FlightUpdate(flight *this, rotation *_rot)
 	PidSetCurrent(&this->pitch, _rot->angle.y);
 	PidSetCurrent(&this->yaw,   _rot->angle.z);
 #else // USE_ACCELERATION - feed rotational rates (divided by sampling rate) in
+	/*
+	PidSetTarget(&this->roll,   this->desiredRoll  - _rot->angle.x);
+	PidSetTarget(&this->pitch,  this->desiredPitch - _rot->angle.y);
+	PidSetTarget(&this->yaw,    this->desiredYaw   - _rot->angle.z);
+	*/
+	
 	PidSetCurrent(&this->roll,  _rot->rate.x / 200.0f);
 	PidSetCurrent(&this->pitch, _rot->rate.y / 200.0f);
 	PidSetCurrent(&this->yaw,   _rot->rate.z / 200.0f);
@@ -55,17 +64,26 @@ void FlightSetDesiredRollPitch(flight *this, float _roll, float _pitch)
 
 void FlightSetDesiredRoll(flight *this, float _roll)
 {
+	this->desiredRoll = _roll;
+	#ifndef USE_ACCELERATION
 	PidSetTarget(&this->roll, _roll);
+	#endif
 }
 
 void FlightSetDesiredPitch(flight *this, float _pitch)
 {
+	this->desiredPitch = _pitch;
+	#ifndef USE_ACCELERATION
 	PidSetTarget(&this->pitch, _pitch);
+	#endif
 }
 
 void FlightSetDesiredYaw(flight *this, float _yaw)
 {
+	this->desiredYaw = _yaw;
+	#ifndef USE_ACCELERATION
 	PidSetTarget(&this->yaw, _yaw);
+	#endif
 }
 
 void FlightSetThrust(flight *this, float _thrust)

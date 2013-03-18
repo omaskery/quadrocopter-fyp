@@ -146,9 +146,8 @@ void _Mode_Running(system_status *this)
 	{
 		toggle = 0;
 		SensorOpGetMotion6(&mpu6050);
+		FlightUpdate(&flight_module, &orientation);
 	}
-	
-	FlightUpdate(&flight_module, &orientation);
 }
 
 void _Mode_Dead(system_status *this)

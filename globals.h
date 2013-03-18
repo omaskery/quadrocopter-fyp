@@ -10,7 +10,7 @@
 #define DEBUG_MOTION
 
 // sets wheter acceleration values are passed into the PID rather than absolute rotation
-//#define USE_ACCELERATION
+#define USE_ACCELERATION
 
 // the baudrate for the USB usart
 #define	USART0_BAUDRATE		115200

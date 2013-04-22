@@ -14,11 +14,11 @@ void FlightInitialise(flight *this)
 	PidInitialise(&this->pitch,  0.000f, 0.000f, 0.000f);
   PidInitialise(&this->yaw,    0.000f, 0.000f, 0.000f);
 #else // USE_ACCELERATION - PID for rotational rates (calculated: 147, 0.1, 0.025)
-	PidInitialise(&this->roll,   0.500f, 0.100f, 0.040f);
+	PidInitialise(&this->roll,   0.300f, 0.150f, 0.060f);
 	PidInitialise(&this->pitch,  0.000f, 0.000f, 0.000f);
   PidInitialise(&this->yaw,    0.000f, 0.000f, 0.000f);
 #endif // USE_ACCELERATION
-	MotorSetSafetyClamps(0.050f, 0.400f);
+	MotorSetSafetyClamps(0.050f, 0.600f);
 }
 
 void FlightUpdate(flight *this, rotation *_rot)
@@ -28,11 +28,18 @@ void FlightUpdate(flight *this, rotation *_rot)
 	PidSetCurrent(&this->pitch, _rot->angle.y);
 	PidSetCurrent(&this->yaw,   _rot->angle.z);
 #else // USE_ACCELERATION - feed rotational rates (divided by sampling rate) in
-	/*
-	PidSetTarget(&this->roll,   this->desiredRoll  - _rot->angle.x);
-	PidSetTarget(&this->pitch,  this->desiredPitch - _rot->angle.y);
-	PidSetTarget(&this->yaw,    this->desiredYaw   - _rot->angle.z);
-	*/
+	///*
+	float deltaRoll, deltaPitch, deltaYaw;
+	float deltaCoefficient = 0.01f;
+	
+	deltaRoll  = this->desiredRoll  - _rot->angle.x;
+	deltaPitch = this->desiredPitch - _rot->angle.y;
+	deltaYaw   = this->desiredYaw   - _rot->angle.z;
+	
+	PidSetTarget(&this->roll,   deltaRoll  * deltaCoefficient);
+	PidSetTarget(&this->pitch,  deltaPitch * deltaCoefficient);
+	PidSetTarget(&this->yaw,    deltaYaw   * deltaCoefficient);
+	//*/
 	
 	PidSetCurrent(&this->roll,  _rot->rate.x / 200.0f);
 	PidSetCurrent(&this->pitch, _rot->rate.y / 200.0f);

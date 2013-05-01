@@ -178,7 +178,7 @@ int  _SensorOpConfigure_Accel(sensor *this)
 {
 	if(_SensorOperation(this, SENSE_OP_CONFIG_ACCEL))
 	{
-		_SensorWriteRegister(this, MPU6050_RA_ACCEL_CONFIG, 0x08);
+		_SensorWriteRegister(this, MPU6050_RA_ACCEL_CONFIG, 0x00);
 		return 1;
 	}
 	return 0;

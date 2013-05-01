@@ -847,10 +847,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>2</ColumnNumber>
+      <ColumnNumber>29</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
       <TopLine>7</TopLine>
-      <CurrentLine>43</CurrentLine>
+      <CurrentLine>33</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\flight.c</PathWithFileName>
       <FilenameWithoutPath>flight.c</FilenameWithoutPath>

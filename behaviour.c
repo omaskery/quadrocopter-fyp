@@ -139,7 +139,7 @@ void _Mode_Running(system_status *this)
 	if(this->modeChanged)
 	{
 		UsartWriteLine(&usart0, "Running!");
-		FlightSetThrust(&flight_module, 0.15);
+		FlightSetThrust(&flight_module, 0.2);
 	}
 	
 	if(toggle ++ >= everyOther)

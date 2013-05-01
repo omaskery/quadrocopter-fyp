@@ -9,15 +9,17 @@ void FlightInitialise(flight *this)
 	this->desiredRoll = 0.0f;
 	this->desiredPitch = 0.0f;
 	this->desiredYaw = 0.0f;
+	
 #ifndef USE_ACCELERATION // PID for absolute angles
 	PidInitialise(&this->roll,   0.002f, 0.001f, 0.001f);
 	PidInitialise(&this->pitch,  0.000f, 0.000f, 0.000f);
   PidInitialise(&this->yaw,    0.000f, 0.000f, 0.000f);
 #else // USE_ACCELERATION - PID for rotational rates (calculated: 147, 0.1, 0.025)
-	PidInitialise(&this->roll,   0.300f, 0.150f, 0.060f);
+	PidInitialise(&this->roll,   0.400f, 0.150f, 0.060f);
 	PidInitialise(&this->pitch,  0.000f, 0.000f, 0.000f);
   PidInitialise(&this->yaw,    0.000f, 0.000f, 0.000f);
 #endif // USE_ACCELERATION
+	
 	MotorSetSafetyClamps(0.050f, 0.600f);
 }
 

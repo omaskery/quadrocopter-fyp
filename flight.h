@@ -7,6 +7,7 @@
 typedef struct flight_t
 {
 	float desiredRoll, desiredPitch, desiredYaw;
+	pid rollAngle, pitchAngle;
 	pid roll, pitch, yaw;
 	float thrust;
 } flight;

@@ -1,7 +1,7 @@
 #ifndef SYSTEM_H
 #define SYSTEM_H
 
-#include "timer.h"
+#include "../peripheral_drivers/timer.h"
 
 struct system_status_t;
 // type definition for 'mode functions' that handle the current mode of operation of the device

@@ -1,8 +1,8 @@
 #ifndef USART_H
 #define USART_H
 
-#include "includes.h"
-#include "queue.h"
+#include "../includes.h"
+#include "../utility_group/queue.h"
 
 // structure to represent a USART peripheral
 typedef struct usart_t

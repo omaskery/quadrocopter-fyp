@@ -1,8 +1,8 @@
 #include "system.h"
 #include "behaviour.h"
-#include "motor.h"
-#include "globals.h"
-#include "usart.h"
+#include "../hardware_layer/motor.h"
+#include "../globals.h"
+#include "../peripheral_drivers/usart.h"
 
 timer global_timer;
 system_status sys;

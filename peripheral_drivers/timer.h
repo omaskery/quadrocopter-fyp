@@ -1,7 +1,7 @@
 #ifndef TIMER_H
 #define TIMER_H
 
-#include "includes.h"
+#include "../includes.h"
 
 // struct for timer peripherals
 typedef struct timer_t

@@ -1,15 +1,15 @@
 #include "init.h"
 
-#include "includes.h"
-#include "globals.h"
-#include "usart.h"
-#include "mypwm.h"
-#include "motor.h"
-#include "iic.h"
-#include "sensor.h"
-#include "motion.h"
-#include "flight.h"
-#include "system.h"
+#include "../includes.h"
+#include "../globals.h"
+#include "../peripheral_drivers/usart.h"
+#include "../peripheral_drivers/mypwm.h"
+#include "../hardware_layer/motor.h"
+#include "../peripheral_drivers/iic.h"
+#include "../hardware_layer/sensor.h"
+#include "../logic_layer/motion.h"
+#include "../logic_layer/flight.h"
+#include "../logic_layer/system.h"
 
 char rxUsartBuffer[RX_BUFFER_SIZE];
 char txUsartBuffer[TX_BUFFER_SIZE];

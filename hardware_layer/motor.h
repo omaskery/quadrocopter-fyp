@@ -1,7 +1,7 @@
 #ifndef MOTOR_H
 #define MOTOR_H
 
-#include "mypwm.h"
+#include "../peripheral_drivers/mypwm.h"
 
 // represents a motor
 typedef struct motor_t

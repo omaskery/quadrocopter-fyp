@@ -1,5 +1,5 @@
 #include "usart.h"
-#include "globals.h"
+#include "../globals.h"
 
 volatile usart usart0;
 

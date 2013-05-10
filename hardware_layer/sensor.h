@@ -1,8 +1,8 @@
 #ifndef SENSOR_H
 #define SENSOR_H
 
-#include "iic.h"
-#include "usart.h"
+#include "../peripheral_drivers/iic.h"
+#include "../peripheral_drivers/usart.h"
 
 // enumeration describing the validity of the sensor (whether it has been tested)
 enum SENSOR_VALIDITY

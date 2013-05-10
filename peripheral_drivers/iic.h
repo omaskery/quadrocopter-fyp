@@ -1,9 +1,9 @@
 #ifndef IIC_H
 #define IIC_H
 
-#include "includes.h"
-#include "globals.h"
-#include "queue.h"
+#include "../includes.h"
+#include "../globals.h"
+#include "../utility_group/queue.h"
 
 struct i2c_t;
 

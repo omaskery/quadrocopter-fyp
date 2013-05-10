@@ -1,7 +1,7 @@
 #include "motor.h"
-#include "usart.h"
+#include "../peripheral_drivers/usart.h"
 
-#include "includes.h"
+#include "../includes.h"
 
 motor motorA, motorB, motorC, motorD;
 motor *all_motors[4];

@@ -1,7 +1,7 @@
 #ifndef MOTION_H
 #define MOTION_H
 
-#include "sensor.h"
+#include "../hardware_layer/sensor.h"
 
 typedef struct rotation_component_t
 {

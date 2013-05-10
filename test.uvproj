@@ -459,42 +459,42 @@
             <File>
               <FileName>usart.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\usart.h</FilePath>
+              <FilePath>.\peripheral_drivers\usart.h</FilePath>
             </File>
             <File>
               <FileName>usart.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\usart.c</FilePath>
+              <FilePath>.\peripheral_drivers\usart.c</FilePath>
             </File>
             <File>
               <FileName>mypwm.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\mypwm.c</FilePath>
+              <FilePath>.\peripheral_drivers\mypwm.c</FilePath>
             </File>
             <File>
               <FileName>mypwm.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\mypwm.h</FilePath>
+              <FilePath>.\peripheral_drivers\mypwm.h</FilePath>
             </File>
             <File>
               <FileName>iic.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\iic.c</FilePath>
+              <FilePath>.\peripheral_drivers\iic.c</FilePath>
             </File>
             <File>
               <FileName>iic.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\iic.h</FilePath>
+              <FilePath>.\peripheral_drivers\iic.h</FilePath>
             </File>
             <File>
               <FileName>timer.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\timer.h</FilePath>
+              <FilePath>.\peripheral_drivers\timer.h</FilePath>
             </File>
             <File>
               <FileName>timer.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\timer.c</FilePath>
+              <FilePath>.\peripheral_drivers\timer.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -504,22 +504,22 @@
             <File>
               <FileName>queue.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\queue.h</FilePath>
+              <FilePath>.\utility_group\queue.h</FilePath>
             </File>
             <File>
               <FileName>queue.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\queue.c</FilePath>
+              <FilePath>.\utility_group\queue.c</FilePath>
             </File>
             <File>
               <FileName>init.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\init.h</FilePath>
+              <FilePath>.\utility_group\init.h</FilePath>
             </File>
             <File>
               <FileName>init.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\init.c</FilePath>
+              <FilePath>.\utility_group\init.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -529,22 +529,22 @@
             <File>
               <FileName>motor.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\motor.c</FilePath>
+              <FilePath>.\hardware_layer\motor.c</FilePath>
             </File>
             <File>
               <FileName>motor.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\motor.h</FilePath>
+              <FilePath>.\hardware_layer\motor.h</FilePath>
             </File>
             <File>
               <FileName>sensor.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\sensor.c</FilePath>
+              <FilePath>.\hardware_layer\sensor.c</FilePath>
             </File>
             <File>
               <FileName>sensor.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\sensor.h</FilePath>
+              <FilePath>.\hardware_layer\sensor.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -554,52 +554,52 @@
             <File>
               <FileName>pid.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\pid.c</FilePath>
+              <FilePath>.\logic_layer\pid.c</FilePath>
             </File>
             <File>
               <FileName>pid.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\pid.h</FilePath>
+              <FilePath>.\logic_layer\pid.h</FilePath>
             </File>
             <File>
               <FileName>system.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\system.h</FilePath>
+              <FilePath>.\logic_layer\system.h</FilePath>
             </File>
             <File>
               <FileName>system.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\system.c</FilePath>
+              <FilePath>.\logic_layer\system.c</FilePath>
             </File>
             <File>
               <FileName>behaviour.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\behaviour.h</FilePath>
+              <FilePath>.\logic_layer\behaviour.h</FilePath>
             </File>
             <File>
               <FileName>behaviour.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\behaviour.c</FilePath>
+              <FilePath>.\logic_layer\behaviour.c</FilePath>
             </File>
             <File>
               <FileName>motion.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\motion.c</FilePath>
+              <FilePath>.\logic_layer\motion.c</FilePath>
             </File>
             <File>
               <FileName>motion.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\motion.h</FilePath>
+              <FilePath>.\logic_layer\motion.h</FilePath>
             </File>
             <File>
               <FileName>flight.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\flight.h</FilePath>
+              <FilePath>.\logic_layer\flight.h</FilePath>
             </File>
             <File>
               <FileName>flight.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\flight.c</FilePath>
+              <FilePath>.\logic_layer\flight.c</FilePath>
             </File>
           </Files>
         </Group>

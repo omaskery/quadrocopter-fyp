@@ -1,8 +1,8 @@
 #include "behaviour.h"
-#include "motor.h"
-#include "usart.h"
-#include "iic.h"
-#include "sensor.h"
+#include "../hardware_layer/motor.h"
+#include "../peripheral_drivers/usart.h"
+#include "../peripheral_drivers/iic.h"
+#include "../hardware_layer/sensor.h"
 #include "motion.h"
 #include "flight.h"
 

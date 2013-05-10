@@ -1,5 +1,5 @@
 #include "flight.h"
-#include "motor.h"
+#include "../hardware_layer/motor.h"
 
 flight flight_module;
 

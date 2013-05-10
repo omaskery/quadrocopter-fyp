@@ -1,11 +1,11 @@
 
 #include "includes.h"
-#include "usart.h"
-#include "motor.h"
+#include "peripheral_drivers/usart.h"
+#include "hardware_layer/motor.h"
 #include "globals.h"
-#include "system.h"
-#include "init.h"
-#include "flight.h"
+#include "logic_layer/system.h"
+#include "utility_group/init.h"
+#include "logic_layer/flight.h"
 
 void system_think(void)
 {

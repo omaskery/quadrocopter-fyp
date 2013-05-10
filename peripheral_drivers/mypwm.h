@@ -1,7 +1,7 @@
 #ifndef PWM_H
 #define PWM_H
 
-#include "includes.h"
+#include "../includes.h"
 
 // pwm generator object
 typedef struct pwm_generator_t

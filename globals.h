@@ -7,7 +7,7 @@
 //#define TEST_MODE
 
 // if defined writes out data from motion subsystem, otherwise does not
-#define DEBUG_MOTION
+//#define DEBUG_MOTION
 
 // sets wheter acceleration values are passed into the PID rather than absolute rotation
 #define USE_ACCELERATION

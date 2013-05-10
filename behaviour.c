@@ -103,7 +103,7 @@ void _Mode_MotorStart(system_status *this)
 		UsartWriteInt32(&usart0, motorIndex);
 		UsartPutNewLine(&usart0);
 		
-		MotorSetPower(all_motors[motorIndex++], 0.05f);
+		MotorSetPower(all_motors[motorIndex++], 0.06f);
 		switch(motorIndex)
 		{
 		case 0: RIT128x96x4StringDraw("Starting motor: front", 5, 25, 15); break;
@@ -139,7 +139,7 @@ void _Mode_Running(system_status *this)
 	if(this->modeChanged)
 	{
 		UsartWriteLine(&usart0, "Running!");
-		FlightSetThrust(&flight_module, 0.2);
+		FlightSetThrust(&flight_module, 0.10);
 	}
 	
 	if(toggle ++ >= everyOther)
@@ -167,9 +167,11 @@ void _Mode_Dead(system_status *this)
 
 void _Mode_MotorConfigure(system_status *this)
 {
+	int i;
+	
 	if(this->modeChanged)
 	{
-		int i;
+		MotorSetSafetyClamps(0.000f, 1.000f);
 		MotorsEnableAll(all_motors, 4);
 		for(i = 0; i < 4; i++)
 			MotorSetPower(all_motors[i], 1.0f);
@@ -187,6 +189,7 @@ void _Mode_TestMode(system_status *this)
 	if(this->modeChanged)
 	{
 		int i;
+		
 		MotorsEnableAll(all_motors, 4);
 		for(i = 0; i < 4; i++)
 			MotorSetPower(all_motors[i], 0.0f);
@@ -219,9 +222,6 @@ void _Mode_TestMode(system_status *this)
 		if(!started && MotionIsCalibrated())
 		{
 			started = 1;
-			MotorSetPower(&motorD, 1.0f);
-			MotorSetPower(&motorB, 0.0f);
-			UsartWriteLine(&usart0, "motors away!");
 		}
 	}
 }

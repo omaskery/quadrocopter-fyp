@@ -49,7 +49,7 @@ void _MotionCallback(sensor *_sensor)
 		const float lsbGyroDivider = 65.0f;
 		const float lsbAccelDivider = 163.840f;
 		const float accelGravity = 100.0f;
-		const float complimentaryRatio = 0.999f;
+		const float complimentaryRatio = 0.9995f;
 		
 		float xAccelAngle, yAccelAngle;
 		
@@ -125,12 +125,15 @@ void _MotionCallback(sensor *_sensor)
 		UsartWriteHex16(&usart0, (int32_t)(orientation.angle.y * 100.0f));
 		UsartPut(&usart0, '\t');
 		UsartWriteHex16(&usart0, (int32_t)(orientation.angle.z * 100.0f));
+		UsartPutStr(&usart0, "\t0\t0\t0");
+		/*
 		UsartPut(&usart0, '\t');
 		UsartWriteHex16(&usart0, (int32_t)(xAccelAngle * 100.0f));
 		UsartPut(&usart0, '\t');
 		UsartWriteHex16(&usart0, (int32_t)(yAccelAngle * 100.0f));
 		UsartPut(&usart0, '\t');
 		UsartWriteHex16(&usart0, (int32_t)(latestAccel.z * 100.0f));
+		*/
 		UsartPutNewLine(&usart0);
 #endif // USE_HEX
 
